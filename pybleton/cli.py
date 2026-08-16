@@ -12,7 +12,11 @@ def main():
             install_remote_script()
         elif cmd == "configure-claude":
             configure_claude()
+        elif cmd in ("--help", "-h"):
+            print("Usage: pybleton [mcp|install|configure-claude]")
+            sys.exit(0)
         else:
+            print(f"Unknown command: {cmd}")
             print("Usage: pybleton [mcp|install|configure-claude]")
             sys.exit(1)
     else:
