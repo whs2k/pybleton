@@ -1,0 +1,28 @@
+[project]
+name = "pybleton"
+version = "0.1.0"
+description = "Modern Python SDK & FastMCP Server for Ableton Live"
+authors = [
+    {name = "Antigravity", email = "antigravity@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "python-osc>=1.8.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.24.0",
+]
+
+[project.scripts]
+pybleton = "pybleton.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

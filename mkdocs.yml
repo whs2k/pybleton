@@ -1,0 +1,14 @@
+site_name: Pybleton
+theme:
+  name: material
+  palette:
+    scheme: slate
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+nav:
+  - Home: index.md
+  - SDK Guide: sdk.md
+  - MCP Guide: mcp.md
+  - API Reference: api.md
