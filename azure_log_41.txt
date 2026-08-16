@@ -1,0 +1,1670 @@
+2026-08-16T03:07:54.2039269Z ##[section]Starting: win_64 win
+2026-08-16T03:07:54.3176989Z ##[section]Starting: Initialize job
+2026-08-16T03:07:54.3180545Z Agent name: 'Azure Pipelines 2'
+2026-08-16T03:07:54.3180928Z Agent machine name: 'runnervmd500z'
+2026-08-16T03:07:54.3181087Z Current agent version: '5.277.0'
+2026-08-16T03:07:54.3201434Z ##[group]Runner Image Provisioner
+2026-08-16T03:07:54.3201724Z Hosted Compute Agent
+2026-08-16T03:07:54.3201862Z Version: 20260729.566
+2026-08-16T03:07:54.3202052Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
+2026-08-16T03:07:54.3202227Z Build Date: 2026-07-29T19:17:02Z
+2026-08-16T03:07:54.3202419Z Worker ID: {54eba7d2-a04d-40ae-80c1-e1a048347477}
+2026-08-16T03:07:54.3202577Z Azure Region: westcentralus
+2026-08-16T03:07:54.3202731Z ##[endgroup]
+2026-08-16T03:07:54.3202875Z ##[group]_internal_runner_telemetry
+2026-08-16T03:07:54.3203078Z ProcessLifetimeId: f5ef5559-e564-4b54-a0cf-9334faaf4205
+2026-08-16T03:07:54.3203264Z Azure Region: westcentralus
+2026-08-16T03:07:54.3203389Z ##[endgroup]
+2026-08-16T03:07:54.3203615Z ##[group]Operating System
+2026-08-16T03:07:54.3203789Z Microsoft Windows Server 2022
+2026-08-16T03:07:54.3203947Z 10.0.20348
+2026-08-16T03:07:54.3204064Z Datacenter
+2026-08-16T03:07:54.3204197Z ##[endgroup]
+2026-08-16T03:07:54.3204321Z ##[group]Runner Image
+2026-08-16T03:07:54.3204503Z Image: windows-2022
+2026-08-16T03:07:54.3204637Z Version: 20260802.262.1
+2026-08-16T03:07:54.3204870Z Included Software: https://github.com/actions/runner-images/blob/win22/20260802.262/images/windows/Windows2022-Readme.md
+2026-08-16T03:07:54.3205129Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20260802.262
+2026-08-16T03:07:54.3205321Z ##[endgroup]
+2026-08-16T03:07:54.3208613Z Current image version: '20260802.262.1'
+2026-08-16T03:07:54.3985398Z Agent running as: 'VssAdministrator'
+2026-08-16T03:07:54.4044533Z Prepare build directory.
+2026-08-16T03:07:54.4354078Z Set build variables.
+2026-08-16T03:07:54.4376363Z Download all required tasks.
+2026-08-16T03:07:54.4472483Z Downloading task: CmdLine (2.276.0)
+2026-08-16T03:07:55.0332742Z Downloading task: PublishPipelineArtifact (1.242.0)
+2026-08-16T03:07:55.1254875Z Checking job knob settings.
+2026-08-16T03:07:55.1259309Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2026-08-16T03:07:55.1259838Z    Knob: AgentToolsDirectory = C:\hostedtoolcache\windows Source: ${AGENT_TOOLSDIRECTORY} 
+2026-08-16T03:07:55.1262295Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2026-08-16T03:07:55.1264908Z    Knob: UseNode24withHandlerData = True Source: $(DistributedTask.Agent.UseNode24withHandlerData) 
+2026-08-16T03:07:55.1267729Z    Knob: EnableIssueSourceValidation = true Source: $(ENABLE_ISSUE_SOURCE_VALIDATION) 
+2026-08-16T03:07:55.1269262Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2026-08-16T03:07:55.1273057Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2026-08-16T03:07:55.1273739Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2026-08-16T03:07:55.1274162Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2026-08-16T03:07:55.1274583Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2026-08-16T03:07:55.1275268Z    Knob: UseNewNodeHandlerTelemetry = True Source: $(DistributedTask.Agent.USENEWNODEHANDLERTELEMETRY) 
+2026-08-16T03:07:55.1276111Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2026-08-16T03:07:55.1277824Z    Knob: EnableResourceMonitorDebugOutput = true Source: $(AZP_ENABLE_RESOURCE_MONITOR_DEBUG_OUTPUT) 
+2026-08-16T03:07:55.1278804Z    Knob: EnableResourceUtilizationWarnings = true Source: $(AZP_ENABLE_RESOURCE_UTILIZATION_WARNINGS) 
+2026-08-16T03:07:55.1279650Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2026-08-16T03:07:55.1282459Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2026-08-16T03:07:55.1282826Z    Knob: EnhancedWorkerCrashHandling = true Source: ${AZP_ENHANCED_WORKER_CRASH_HANDLING} 
+2026-08-16T03:07:55.1283422Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2026-08-16T03:07:55.1284010Z    Knob: CheckIfTaskNodeRunnerIsDeprecated246 = True Source: $(DistributedTask.Agent.CheckIfTaskNodeRunnerIsDeprecated246) 
+2026-08-16T03:07:55.1284498Z    Knob: UseNode20ToStartContainer = True Source: $(DistributedTask.Agent.UseNode20ToStartContainer) 
+2026-08-16T03:07:55.1284960Z    Knob: UseNode24ToStartContainer = True Source: $(DistributedTask.Agent.UseNode24ToStartContainer) 
+2026-08-16T03:07:55.1285636Z    Knob: EnableTimeoutLogFlushing = True Source: $(DistributedTask.Agent.EnableTimeoutLogFlushing) 
+2026-08-16T03:07:55.1286833Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2026-08-16T03:07:55.1287485Z    Knob: UseFetchFilterInCheckoutTask = true Source: $(AGENT_USE_FETCH_FILTER_IN_CHECKOUT_TASK) 
+2026-08-16T03:07:55.1287972Z    Knob: UseFetchFilterInGitSubmoduleUpdate = True Source: $(DistributedTask.Agent.UseFetchFilterInGitSubmoduleUpdate) 
+2026-08-16T03:07:55.1288525Z    Knob: Rosetta2Warning = true Source: $(ROSETTA2_WARNING) 
+2026-08-16T03:07:55.1289712Z    Knob: AddForceCredentialsToGitCheckout = True Source: $(DistributedTask.Agent.AddForceCredentialsToGitCheckout) 
+2026-08-16T03:07:55.1290547Z    Knob: AddForceCredentialsToGitCheckoutEnhanced = True Source: $(DistributedTask.Agent.AddForceCredentialsToGitCheckoutEnhanced) 
+2026-08-16T03:07:55.1291410Z    Knob: UseLatestTfExe = True Source: $(DistributedTask.Agent.UseLatestTfExe) 
+2026-08-16T03:07:55.1291864Z    Knob: UseSparseCheckoutInCheckoutTask = true Source: $(AGENT_USE_SPARSE_CHECKOUT_IN_CHECKOUT_TASK) 
+2026-08-16T03:07:55.1292446Z    Knob: AgentCDNConnectivityFailWarning = False Source: $(DistributedTask.Agent.AgentCDNConnectivityFailWarning) 
+2026-08-16T03:07:55.1292840Z    Knob: UseEnhancedLogging = true Source: ${AZP_USE_ENHANCED_LOGGING} 
+2026-08-16T03:07:55.1293307Z    Knob: EnableEnhancedContainerDiagnostics = True Source: $(DistributedTask.Agent.EnableEnhancedContainerDiagnostics) 
+2026-08-16T03:07:55.1293789Z    Knob: EnableDockerExecDiagnostics = True Source: $(DistributedTask.Agent.EnableDockerExecDiagnostics) 
+2026-08-16T03:07:55.1294219Z Finished checking job knob settings.
+2026-08-16T03:07:55.1928242Z Plugin: 'Test Result Parser plugin' is running in background.
+2026-08-16T03:07:55.1928695Z Plugin: 'Test File Publisher plugin' is running in background.
+2026-08-16T03:07:55.1929499Z Start tracking orphan processes.
+2026-08-16T03:07:55.1965198Z ##[section]Finishing: Initialize job
+2026-08-16T03:07:55.2081625Z ##[section]Async Command Start: DetectDockerContainer
+2026-08-16T03:07:55.2083005Z ##[section]Async Command End: DetectDockerContainer
+2026-08-16T03:07:55.2085095Z ##[section]Async Command Start: DetectDockerContainer
+2026-08-16T03:07:55.2085629Z ##[section]Async Command End: DetectDockerContainer
+2026-08-16T03:07:55.2414491Z ##[section]Starting: Checkout conda-forge/staged-recipes@refs/pull/34544/merge to s
+2026-08-16T03:07:55.2577084Z ==============================================================================
+2026-08-16T03:07:55.2578230Z Task         : Get sources
+2026-08-16T03:07:55.2579113Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2026-08-16T03:07:55.2579538Z Version      : 1.0.0
+2026-08-16T03:07:55.2580329Z Author       : Microsoft
+2026-08-16T03:07:55.2581660Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2026-08-16T03:07:55.2582066Z ==============================================================================
+2026-08-16T03:07:59.2074408Z Syncing repository: conda-forge/staged-recipes (GitHub)
+2026-08-16T03:07:59.2098414Z Prepending Path environment variable with directory containing 'git.exe'.
+2026-08-16T03:08:00.1927128Z ##[command]git version
+2026-08-16T03:08:00.2055429Z git version 2.55.0.windows.1
+2026-08-16T03:08:00.2057909Z ##[command]git lfs version
+2026-08-16T03:08:00.2070469Z git-lfs/3.7.1 (GitHub; windows amd64; go 1.25.1; git b84b3384)
+2026-08-16T03:08:00.2075304Z ##[command]git init "D:\a\1\s"
+2026-08-16T03:08:00.2083691Z Initialized empty Git repository in D:/a/1/s/.git/
+2026-08-16T03:08:00.2087087Z ##[command]git remote add origin https://github.com/conda-forge/staged-recipes
+2026-08-16T03:08:00.2883038Z ##[command]git sparse-checkout disable
+2026-08-16T03:08:00.3291699Z ##[command]git config gc.auto 0
+2026-08-16T03:08:00.3810242Z ##[command]git config core.longpaths true
+2026-08-16T03:08:00.4585782Z ##[command]git config --get-all http.https://github.com/conda-forge/staged-recipes.extraheader
+2026-08-16T03:08:00.4943030Z ##[command]git config --get-all http.extraheader
+2026-08-16T03:08:00.5342254Z ##[command]git config --get-regexp .*extraheader
+2026-08-16T03:08:00.6078081Z ##[command]git config --get-all http.proxy
+2026-08-16T03:08:00.6457466Z ##[command]git config http.version HTTP/1.1
+2026-08-16T03:08:00.6859209Z ##[command]git config --get-all remote.origin.promisor
+2026-08-16T03:08:00.7301927Z ##[command]git config --get-all remote.origin.partialclonefilter
+2026-08-16T03:08:00.7788291Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin   +refs/heads/*:refs/remotes/origin/* +refs/pull/34544/merge:refs/remotes/pull/34544/merge
+2026-08-16T03:08:01.5011719Z remote: Enumerating objects: 744009, done.        
+2026-08-16T03:08:01.5013573Z remote: Counting objects:   0% (1/473)        
+2026-08-16T03:08:01.5014465Z remote: Counting objects:   1% (5/473)        
+2026-08-16T03:08:01.5015335Z remote: Counting objects:   2% (10/473)        
+2026-08-16T03:08:01.5016181Z remote: Counting objects:   3% (15/473)        
+2026-08-16T03:08:01.5017010Z remote: Counting objects:   4% (19/473)        
+2026-08-16T03:08:01.5017951Z remote: Counting objects:   5% (24/473)        
+2026-08-16T03:08:01.5018838Z remote: Counting objects:   6% (29/473)        
+2026-08-16T03:08:01.5019707Z remote: Counting objects:   7% (34/473)        
+2026-08-16T03:08:01.5020584Z remote: Counting objects:   8% (38/473)        
+2026-08-16T03:08:01.5021643Z remote: Counting objects:   9% (43/473)        
+2026-08-16T03:08:01.5022436Z remote: Counting objects:  10% (48/473)        
+2026-08-16T03:08:01.5023209Z remote: Counting objects:  11% (53/473)        
+2026-08-16T03:08:01.5024016Z remote: Counting objects:  12% (57/473)        
+2026-08-16T03:08:01.5024920Z remote: Counting objects:  13% (62/473)        
+2026-08-16T03:08:01.5025785Z remote: Counting objects:  14% (67/473)        
+2026-08-16T03:08:01.5026612Z remote: Counting objects:  15% (71/473)        
+2026-08-16T03:08:01.5028001Z remote: Counting objects:  16% (76/473)        
+2026-08-16T03:08:01.5028864Z remote: Counting objects:  17% (81/473)        
+2026-08-16T03:08:01.5029679Z remote: Counting objects:  18% (86/473)        
+2026-08-16T03:08:01.5032220Z remote: Counting objects:  19% (90/473)        
+2026-08-16T03:08:01.5033382Z remote: Counting objects:  20% (95/473)        
+2026-08-16T03:08:01.5034295Z remote: Counting objects:  21% (100/473)        
+2026-08-16T03:08:01.5035121Z remote: Counting objects:  22% (105/473)        
+2026-08-16T03:08:01.5035954Z remote: Counting objects:  23% (109/473)        
+2026-08-16T03:08:01.5036807Z remote: Counting objects:  24% (114/473)        
+2026-08-16T03:08:01.5037639Z remote: Counting objects:  25% (119/473)        
+2026-08-16T03:08:01.5038495Z remote: Counting objects:  26% (123/473)        
+2026-08-16T03:08:01.5039239Z remote: Counting objects:  27% (128/473)        
+2026-08-16T03:08:01.5040074Z remote: Counting objects:  28% (133/473)        
+2026-08-16T03:08:01.5041031Z remote: Counting objects:  29% (138/473)        
+2026-08-16T03:08:01.5041788Z remote: Counting objects:  30% (142/473)        
+2026-08-16T03:08:01.5042735Z remote: Counting objects:  31% (147/473)        
+2026-08-16T03:08:01.5043741Z remote: Counting objects:  32% (152/473)        
+2026-08-16T03:08:01.5044487Z remote: Counting objects:  33% (157/473)        
+2026-08-16T03:08:01.5045198Z remote: Counting objects:  34% (161/473)        
+2026-08-16T03:08:01.5045836Z remote: Counting objects:  35% (166/473)        
+2026-08-16T03:08:01.5046488Z remote: Counting objects:  36% (171/473)        
+2026-08-16T03:08:01.5047157Z remote: Counting objects:  37% (176/473)        
+2026-08-16T03:08:01.5047843Z remote: Counting objects:  38% (180/473)        
+2026-08-16T03:08:01.5048537Z remote: Counting objects:  39% (185/473)        
+2026-08-16T03:08:01.5049203Z remote: Counting objects:  40% (190/473)        
+2026-08-16T03:08:01.5049859Z remote: Counting objects:  41% (194/473)        
+2026-08-16T03:08:01.5050492Z remote: Counting objects:  42% (199/473)        
+2026-08-16T03:08:01.5051195Z remote: Counting objects:  43% (204/473)        
+2026-08-16T03:08:01.5052116Z remote: Counting objects:  44% (209/473)        
+2026-08-16T03:08:01.5052923Z remote: Counting objects:  45% (213/473)        
+2026-08-16T03:08:01.5053498Z remote: Counting objects:  46% (218/473)        
+2026-08-16T03:08:01.5053948Z remote: Counting objects:  47% (223/473)        
+2026-08-16T03:08:01.5054526Z remote: Counting objects:  48% (228/473)        
+2026-08-16T03:08:01.5055046Z remote: Counting objects:  49% (232/473)        
+2026-08-16T03:08:01.5055511Z remote: Counting objects:  50% (237/473)        
+2026-08-16T03:08:01.5055979Z remote: Counting objects:  51% (242/473)        
+2026-08-16T03:08:01.5056423Z remote: Counting objects:  52% (246/473)        
+2026-08-16T03:08:01.5056866Z remote: Counting objects:  53% (251/473)        
+2026-08-16T03:08:01.5057387Z remote: Counting objects:  54% (256/473)        
+2026-08-16T03:08:01.5057919Z remote: Counting objects:  55% (261/473)        
+2026-08-16T03:08:01.5058396Z remote: Counting objects:  56% (265/473)        
+2026-08-16T03:08:01.5058880Z remote: Counting objects:  57% (270/473)        
+2026-08-16T03:08:01.5059346Z remote: Counting objects:  58% (275/473)        
+2026-08-16T03:08:01.5059949Z remote: Counting objects:  59% (280/473)        
+2026-08-16T03:08:01.5060419Z remote: Counting objects:  60% (284/473)        
+2026-08-16T03:08:01.5060906Z remote: Counting objects:  61% (289/473)        
+2026-08-16T03:08:01.5061376Z remote: Counting objects:  62% (294/473)        
+2026-08-16T03:08:01.5061849Z remote: Counting objects:  63% (298/473)        
+2026-08-16T03:08:01.5062331Z remote: Counting objects:  64% (303/473)        
+2026-08-16T03:08:01.5062798Z remote: Counting objects:  65% (308/473)        
+2026-08-16T03:08:01.5063279Z remote: Counting objects:  66% (313/473)        
+2026-08-16T03:08:01.5063741Z remote: Counting objects:  67% (317/473)        
+2026-08-16T03:08:01.5064218Z remote: Counting objects:  68% (322/473)        
+2026-08-16T03:08:01.5064712Z remote: Counting objects:  69% (327/473)        
+2026-08-16T03:08:01.5065208Z remote: Counting objects:  70% (332/473)        
+2026-08-16T03:08:01.5066241Z remote: Counting objects:  71% (336/473)        
+2026-08-16T03:08:01.5066821Z remote: Counting objects:  72% (341/473)        
+2026-08-16T03:08:01.5067323Z remote: Counting objects:  73% (346/473)        
+2026-08-16T03:08:01.5067793Z remote: Counting objects:  74% (351/473)        
+2026-08-16T03:08:01.5068326Z remote: Counting objects:  75% (355/473)        
+2026-08-16T03:08:01.5068808Z remote: Counting objects:  76% (360/473)        
+2026-08-16T03:08:01.5069279Z remote: Counting objects:  77% (365/473)        
+2026-08-16T03:08:01.5069754Z remote: Counting objects:  78% (369/473)        
+2026-08-16T03:08:01.5070254Z remote: Counting objects:  79% (374/473)        
+2026-08-16T03:08:01.5070719Z remote: Counting objects:  80% (379/473)        
+2026-08-16T03:08:01.5071189Z remote: Counting objects:  81% (384/473)        
+2026-08-16T03:08:01.5071692Z remote: Counting objects:  82% (388/473)        
+2026-08-16T03:08:01.5072489Z remote: Counting objects:  83% (393/473)        
+2026-08-16T03:08:01.5072986Z remote: Counting objects:  84% (398/473)        
+2026-08-16T03:08:01.5073446Z remote: Counting objects:  85% (403/473)        
+2026-08-16T03:08:01.5073926Z remote: Counting objects:  86% (407/473)        
+2026-08-16T03:08:01.5074402Z remote: Counting objects:  87% (412/473)        
+2026-08-16T03:08:01.5074869Z remote: Counting objects:  88% (417/473)        
+2026-08-16T03:08:01.5075334Z remote: Counting objects:  89% (421/473)        
+2026-08-16T03:08:01.5075799Z remote: Counting objects:  90% (426/473)        
+2026-08-16T03:08:01.5076252Z remote: Counting objects:  91% (431/473)        
+2026-08-16T03:08:01.5076715Z remote: Counting objects:  92% (436/473)        
+2026-08-16T03:08:01.5077194Z remote: Counting objects:  93% (440/473)        
+2026-08-16T03:08:01.5077701Z remote: Counting objects:  94% (445/473)        
+2026-08-16T03:08:01.5078174Z remote: Counting objects:  95% (450/473)        
+2026-08-16T03:08:01.5078692Z remote: Counting objects:  96% (455/473)        
+2026-08-16T03:08:01.5079246Z remote: Counting objects:  97% (459/473)        
+2026-08-16T03:08:01.5079726Z remote: Counting objects:  98% (464/473)        
+2026-08-16T03:08:01.5080209Z remote: Counting objects:  99% (469/473)        
+2026-08-16T03:08:01.5080703Z remote: Counting objects: 100% (473/473)        
+2026-08-16T03:08:01.5081191Z remote: Counting objects: 100% (473/473), done.        
+2026-08-16T03:08:01.5081689Z remote: Compressing objects:   0% (1/251)        
+2026-08-16T03:08:01.5082161Z remote: Compressing objects:   1% (3/251)        
+2026-08-16T03:08:01.5082640Z remote: Compressing objects:   2% (6/251)        
+2026-08-16T03:08:01.5083136Z remote: Compressing objects:   3% (8/251)        
+2026-08-16T03:08:01.5083608Z remote: Compressing objects:   4% (11/251)        
+2026-08-16T03:08:01.5084100Z remote: Compressing objects:   5% (13/251)        
+2026-08-16T03:08:01.5084591Z remote: Compressing objects:   6% (16/251)        
+2026-08-16T03:08:01.5085073Z remote: Compressing objects:   7% (18/251)        
+2026-08-16T03:08:01.5085547Z remote: Compressing objects:   8% (21/251)        
+2026-08-16T03:08:01.5086033Z remote: Compressing objects:   9% (23/251)        
+2026-08-16T03:08:01.5086503Z remote: Compressing objects:  10% (26/251)        
+2026-08-16T03:08:01.5086976Z remote: Compressing objects:  11% (28/251)        
+2026-08-16T03:08:01.5087461Z remote: Compressing objects:  12% (31/251)        
+2026-08-16T03:08:01.5087931Z remote: Compressing objects:  13% (33/251)        
+2026-08-16T03:08:01.5088454Z remote: Compressing objects:  14% (36/251)        
+2026-08-16T03:08:01.5088929Z remote: Compressing objects:  15% (38/251)        
+2026-08-16T03:08:01.5089395Z remote: Compressing objects:  16% (41/251)        
+2026-08-16T03:08:01.5089878Z remote: Compressing objects:  17% (43/251)        
+2026-08-16T03:08:01.5090351Z remote: Compressing objects:  18% (46/251)        
+2026-08-16T03:08:01.5090824Z remote: Compressing objects:  19% (48/251)        
+2026-08-16T03:08:01.5091392Z remote: Compressing objects:  20% (51/251)        
+2026-08-16T03:08:01.5091891Z remote: Compressing objects:  21% (53/251)        
+2026-08-16T03:08:01.5092382Z remote: Compressing objects:  22% (56/251)        
+2026-08-16T03:08:01.5092863Z remote: Compressing objects:  23% (58/251)        
+2026-08-16T03:08:01.5093349Z remote: Compressing objects:  24% (61/251)        
+2026-08-16T03:08:01.5093818Z remote: Compressing objects:  25% (63/251)        
+2026-08-16T03:08:01.5094287Z remote: Compressing objects:  26% (66/251)        
+2026-08-16T03:08:01.5094768Z remote: Compressing objects:  27% (68/251)        
+2026-08-16T03:08:01.5095245Z remote: Compressing objects:  28% (71/251)        
+2026-08-16T03:08:01.5095722Z remote: Compressing objects:  29% (73/251)        
+2026-08-16T03:08:01.5096204Z remote: Compressing objects:  30% (76/251)        
+2026-08-16T03:08:01.5096670Z remote: Compressing objects:  31% (78/251)        
+2026-08-16T03:08:01.5097688Z remote: Compressing objects:  32% (81/251)        
+2026-08-16T03:08:01.5098225Z remote: Compressing objects:  33% (83/251)        
+2026-08-16T03:08:01.5098704Z remote: Compressing objects:  34% (86/251)        
+2026-08-16T03:08:01.5099188Z remote: Compressing objects:  35% (88/251)        
+2026-08-16T03:08:01.5099670Z remote: Compressing objects:  36% (91/251)        
+2026-08-16T03:08:01.5100146Z remote: Compressing objects:  37% (93/251)        
+2026-08-16T03:08:01.5100666Z remote: Compressing objects:  38% (96/251)        
+2026-08-16T03:08:01.5101159Z remote: Compressing objects:  39% (98/251)        
+2026-08-16T03:08:01.5101633Z remote: Compressing objects:  40% (101/251)        
+2026-08-16T03:08:01.5102105Z remote: Compressing objects:  41% (103/251)        
+2026-08-16T03:08:01.5102581Z remote: Compressing objects:  42% (106/251)        
+2026-08-16T03:08:01.5103051Z remote: Compressing objects:  43% (108/251)        
+2026-08-16T03:08:01.5103516Z remote: Compressing objects:  44% (111/251)        
+2026-08-16T03:08:01.5104012Z remote: Compressing objects:  45% (113/251)        
+2026-08-16T03:08:01.5104498Z remote: Compressing objects:  46% (116/251)        
+2026-08-16T03:08:01.5104966Z remote: Compressing objects:  47% (118/251)        
+2026-08-16T03:08:01.5105448Z remote: Compressing objects:  48% (121/251)        
+2026-08-16T03:08:01.5105948Z remote: Compressing objects:  49% (123/251)        
+2026-08-16T03:08:01.5106473Z remote: Compressing objects:  50% (126/251)        
+2026-08-16T03:08:01.5106977Z remote: Compressing objects:  51% (129/251)        
+2026-08-16T03:08:01.5107462Z remote: Compressing objects:  52% (131/251)        
+2026-08-16T03:08:01.5107938Z remote: Compressing objects:  53% (134/251)        
+2026-08-16T03:08:01.5108413Z remote: Compressing objects:  54% (136/251)        
+2026-08-16T03:08:01.5108914Z remote: Compressing objects:  55% (139/251)        
+2026-08-16T03:08:01.5109400Z remote: Compressing objects:  56% (141/251)        
+2026-08-16T03:08:01.5109895Z remote: Compressing objects:  57% (144/251)        
+2026-08-16T03:08:01.5110371Z remote: Compressing objects:  58% (146/251)        
+2026-08-16T03:08:01.5110844Z remote: Compressing objects:  59% (149/251)        
+2026-08-16T03:08:01.5111320Z remote: Compressing objects:  60% (151/251)        
+2026-08-16T03:08:01.5111790Z remote: Compressing objects:  61% (154/251)        
+2026-08-16T03:08:01.5112309Z remote: Compressing objects:  62% (156/251)        
+2026-08-16T03:08:01.5112792Z remote: Compressing objects:  63% (159/251)        
+2026-08-16T03:08:01.5113273Z remote: Compressing objects:  64% (161/251)        
+2026-08-16T03:08:01.5113754Z remote: Compressing objects:  65% (164/251)        
+2026-08-16T03:08:01.5114227Z remote: Compressing objects:  66% (166/251)        
+2026-08-16T03:08:01.5114716Z remote: Compressing objects:  67% (169/251)        
+2026-08-16T03:08:01.5115193Z remote: Compressing objects:  68% (171/251)        
+2026-08-16T03:08:01.5115668Z remote: Compressing objects:  69% (174/251)        
+2026-08-16T03:08:01.5116237Z remote: Compressing objects:  70% (176/251)        
+2026-08-16T03:08:01.5116732Z remote: Compressing objects:  71% (179/251)        
+2026-08-16T03:08:01.5117218Z remote: Compressing objects:  72% (181/251)        
+2026-08-16T03:08:01.5117705Z remote: Compressing objects:  73% (184/251)        
+2026-08-16T03:08:01.5118175Z remote: Compressing objects:  74% (186/251)        
+2026-08-16T03:08:01.5118660Z remote: Compressing objects:  75% (189/251)        
+2026-08-16T03:08:01.5119129Z remote: Compressing objects:  76% (191/251)        
+2026-08-16T03:08:01.5119613Z remote: Compressing objects:  77% (194/251)        
+2026-08-16T03:08:01.5120088Z remote: Compressing objects:  78% (196/251)        
+2026-08-16T03:08:01.5120575Z remote: Compressing objects:  79% (199/251)        
+2026-08-16T03:08:01.5121059Z remote: Compressing objects:  80% (201/251)        
+2026-08-16T03:08:01.5121560Z remote: Compressing objects:  81% (204/251)        
+2026-08-16T03:08:01.5122141Z remote: Compressing objects:  82% (206/251)        
+2026-08-16T03:08:01.5122632Z remote: Compressing objects:  83% (209/251)        
+2026-08-16T03:08:01.5123141Z remote: Compressing objects:  84% (211/251)        
+2026-08-16T03:08:01.5123639Z remote: Compressing objects:  85% (214/251)        
+2026-08-16T03:08:01.5124159Z remote: Compressing objects:  86% (216/251)        
+2026-08-16T03:08:01.5124637Z remote: Compressing objects:  87% (219/251)        
+2026-08-16T03:08:01.5125120Z remote: Compressing objects:  88% (221/251)        
+2026-08-16T03:08:01.5125619Z remote: Compressing objects:  89% (224/251)        
+2026-08-16T03:08:01.5126121Z remote: Compressing objects:  90% (226/251)        
+2026-08-16T03:08:01.5126619Z remote: Compressing objects:  91% (229/251)        
+2026-08-16T03:08:01.5127096Z remote: Compressing objects:  92% (231/251)        
+2026-08-16T03:08:01.5127572Z remote: Compressing objects:  93% (234/251)        
+2026-08-16T03:08:01.5128042Z remote: Compressing objects:  94% (236/251)        
+2026-08-16T03:08:01.5128527Z remote: Compressing objects:  95% (239/251)        
+2026-08-16T03:08:01.5129012Z remote: Compressing objects:  96% (241/251)        
+2026-08-16T03:08:01.5129483Z remote: Compressing objects:  97% (244/251)        
+2026-08-16T03:08:01.5129974Z remote: Compressing objects:  98% (246/251)        
+2026-08-16T03:08:01.5130448Z remote: Compressing objects:  99% (249/251)        
+2026-08-16T03:08:01.5130920Z remote: Compressing objects: 100% (251/251)        
+2026-08-16T03:08:01.5131398Z remote: Compressing objects: 100% (251/251), done.        
+2026-08-16T03:08:01.9456510Z Receiving objects:   0% (1/744009)
+2026-08-16T03:08:02.0936372Z Receiving objects:   1% (7441/744009)
+2026-08-16T03:08:02.2379417Z Receiving objects:   2% (14881/744009)
+2026-08-16T03:08:02.2620117Z Receiving objects:   3% (22321/744009), 8.02 MiB | 16.02 MiB/s
+2026-08-16T03:08:02.3459319Z Receiving objects:   4% (29761/744009), 8.02 MiB | 16.02 MiB/s
+2026-08-16T03:08:02.4450355Z Receiving objects:   5% (37201/744009), 8.02 MiB | 16.02 MiB/s
+2026-08-16T03:08:02.6927511Z Receiving objects:   6% (44641/744009), 8.02 MiB | 16.02 MiB/s
+2026-08-16T03:08:02.6950792Z Receiving objects:   6% (51240/744009), 8.02 MiB | 16.02 MiB/s
+2026-08-16T03:08:02.7500664Z Receiving objects:   7% (52081/744009), 22.93 MiB | 22.94 MiB/s
+2026-08-16T03:08:02.7893774Z Receiving objects:   8% (59521/744009), 22.93 MiB | 22.94 MiB/s
+2026-08-16T03:08:02.9224484Z Receiving objects:   9% (66961/744009), 22.93 MiB | 22.94 MiB/s
+2026-08-16T03:08:03.0047840Z Receiving objects:  10% (74401/744009), 22.93 MiB | 22.94 MiB/s
+2026-08-16T03:08:03.0962978Z Receiving objects:  11% (81841/744009), 22.93 MiB | 22.94 MiB/s
+2026-08-16T03:08:03.1692951Z Receiving objects:  12% (89282/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.2448586Z Receiving objects:  13% (96722/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.3128560Z Receiving objects:  14% (104162/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.3833122Z Receiving objects:  15% (111602/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.4590081Z Receiving objects:  16% (119042/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.5279001Z Receiving objects:  17% (126482/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.5521470Z Receiving objects:  18% (133922/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.5966421Z Receiving objects:  18% (136565/744009), 34.95 MiB | 23.31 MiB/s
+2026-08-16T03:08:03.6604750Z Receiving objects:  19% (141362/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.7248208Z Receiving objects:  20% (148802/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.7717346Z Receiving objects:  21% (156242/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.8254165Z Receiving objects:  22% (163682/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.8799400Z Receiving objects:  23% (171123/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.9355204Z Receiving objects:  24% (178563/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:03.9557143Z Receiving objects:  25% (186003/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:04.0073844Z Receiving objects:  26% (193443/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:04.0404120Z Receiving objects:  27% (200883/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:04.1044733Z Receiving objects:  28% (208323/744009), 51.04 MiB | 25.52 MiB/s
+2026-08-16T03:08:04.1243115Z Receiving objects:  29% (215763/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.1842451Z Receiving objects:  30% (223203/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.1879021Z Receiving objects:  31% (230643/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.2033464Z Receiving objects:  32% (238083/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.2317084Z Receiving objects:  33% (245523/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.2534082Z Receiving objects:  34% (252964/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.2744624Z Receiving objects:  35% (260404/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.2935994Z Receiving objects:  36% (267844/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.4788570Z Receiving objects:  37% (275284/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.5627309Z Receiving objects:  38% (282724/744009), 67.67 MiB | 27.07 MiB/s
+2026-08-16T03:08:04.5676361Z Receiving objects:  39% (290164/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.5811615Z Receiving objects:  39% (292216/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.6068945Z Receiving objects:  40% (297604/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.6269814Z Receiving objects:  41% (305044/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.7243063Z Receiving objects:  42% (312484/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.7303265Z Receiving objects:  43% (319924/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.8013084Z Receiving objects:  44% (327364/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.8245635Z Receiving objects:  45% (334805/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:04.8467247Z Receiving objects:  46% (342245/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:05.0707147Z Receiving objects:  47% (349685/744009), 85.37 MiB | 28.46 MiB/s
+2026-08-16T03:08:05.0963583Z Receiving objects:  48% (357125/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.1182689Z Receiving objects:  49% (364565/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.1562265Z Receiving objects:  50% (372005/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.1808560Z Receiving objects:  51% (379445/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.2025265Z Receiving objects:  52% (386885/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.2304998Z Receiving objects:  53% (394325/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.4334728Z Receiving objects:  54% (401765/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.4580808Z Receiving objects:  55% (409205/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.4923876Z Receiving objects:  56% (416646/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.5231544Z Receiving objects:  57% (424086/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.5509912Z Receiving objects:  58% (431526/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.7540363Z Receiving objects:  59% (438966/744009), 106.14 MiB | 30.32 MiB/s
+2026-08-16T03:08:05.7743630Z Receiving objects:  59% (440676/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.8002757Z Receiving objects:  60% (446406/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.8361417Z Receiving objects:  61% (453846/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.8558420Z Receiving objects:  62% (461286/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.9271460Z Receiving objects:  63% (468726/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.9500268Z Receiving objects:  64% (476166/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.9746932Z Receiving objects:  65% (483606/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:05.9964212Z Receiving objects:  66% (491046/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:06.0374203Z Receiving objects:  67% (498487/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:06.0586378Z Receiving objects:  68% (505927/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:06.0800171Z Receiving objects:  69% (513367/744009), 129.92 MiB | 32.47 MiB/s
+2026-08-16T03:08:06.1052497Z Receiving objects:  70% (520807/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.1669275Z Receiving objects:  71% (528247/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.1752780Z Receiving objects:  72% (535687/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.1991523Z Receiving objects:  73% (543127/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.2284145Z Receiving objects:  74% (550567/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.2521071Z Receiving objects:  75% (558007/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.2927852Z Receiving objects:  76% (565447/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.3181535Z Receiving objects:  77% (572887/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.3411267Z Receiving objects:  78% (580328/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.3675369Z Receiving objects:  79% (587768/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.3938219Z Receiving objects:  80% (595208/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.4398053Z Receiving objects:  81% (602648/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.4720139Z Receiving objects:  82% (610088/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.4912360Z Receiving objects:  83% (617528/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.5137663Z Receiving objects:  84% (624968/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.5507020Z Receiving objects:  85% (632408/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.5692981Z Receiving objects:  86% (639848/744009), 143.70 MiB | 31.92 MiB/s
+2026-08-16T03:08:06.5789224Z Receiving objects:  86% (644616/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.6033536Z Receiving objects:  87% (647288/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.6323252Z Receiving objects:  88% (654728/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.6537509Z Receiving objects:  89% (662169/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.6835137Z Receiving objects:  90% (669609/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.7231960Z Receiving objects:  91% (677049/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.7951092Z Receiving objects:  92% (684489/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.8184616Z Receiving objects:  93% (691929/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.8417919Z Receiving objects:  94% (699369/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.8669877Z Receiving objects:  95% (706809/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.8869931Z Receiving objects:  96% (714249/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.9234743Z Receiving objects:  97% (721689/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:06.9434517Z Receiving objects:  98% (729129/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:07.0012495Z Receiving objects:  99% (736569/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:07.0013164Z remote: Total 744009 (delta 356), reused 238 (delta 216), pack-reused 743536 (from 3)        
+2026-08-16T03:08:07.0013817Z Receiving objects: 100% (744009/744009), 160.53 MiB | 33.88 MiB/s
+2026-08-16T03:08:07.0014350Z Receiving objects: 100% (744009/744009), 175.71 MiB | 32.30 MiB/s, done.
+2026-08-16T03:08:07.0609373Z Resolving deltas:   0% (0/347350)
+2026-08-16T03:08:07.0855892Z Resolving deltas:   1% (3474/347350)
+2026-08-16T03:08:07.1093294Z Resolving deltas:   2% (6947/347350)
+2026-08-16T03:08:07.1378098Z Resolving deltas:   3% (10421/347350)
+2026-08-16T03:08:07.1757605Z Resolving deltas:   4% (13894/347350)
+2026-08-16T03:08:07.2308578Z Resolving deltas:   5% (17368/347350)
+2026-08-16T03:08:07.2442426Z Resolving deltas:   6% (20841/347350)
+2026-08-16T03:08:07.2790837Z Resolving deltas:   7% (24315/347350)
+2026-08-16T03:08:07.4426760Z Resolving deltas:   8% (27788/347350)
+2026-08-16T03:08:07.5391873Z Resolving deltas:   9% (31262/347350)
+2026-08-16T03:08:07.5435479Z Resolving deltas:  10% (34735/347350)
+2026-08-16T03:08:07.5478909Z Resolving deltas:  11% (38209/347350)
+2026-08-16T03:08:07.5580825Z Resolving deltas:  12% (41682/347350)
+2026-08-16T03:08:07.5733014Z Resolving deltas:  13% (45156/347350)
+2026-08-16T03:08:07.5887877Z Resolving deltas:  14% (48629/347350)
+2026-08-16T03:08:07.5955039Z Resolving deltas:  15% (52104/347350)
+2026-08-16T03:08:07.5965084Z Resolving deltas:  16% (55576/347350)
+2026-08-16T03:08:07.5993649Z Resolving deltas:  17% (59050/347350)
+2026-08-16T03:08:07.6008936Z Resolving deltas:  18% (62523/347350)
+2026-08-16T03:08:07.6046158Z Resolving deltas:  19% (65997/347350)
+2026-08-16T03:08:07.6074935Z Resolving deltas:  20% (69470/347350)
+2026-08-16T03:08:07.6080388Z Resolving deltas:  21% (72944/347350)
+2026-08-16T03:08:07.6117608Z Resolving deltas:  22% (76418/347350)
+2026-08-16T03:08:07.6160654Z Resolving deltas:  23% (79891/347350)
+2026-08-16T03:08:07.6292368Z Resolving deltas:  24% (83364/347350)
+2026-08-16T03:08:07.6599473Z Resolving deltas:  25% (86838/347350)
+2026-08-16T03:08:07.6684948Z Resolving deltas:  26% (90311/347350)
+2026-08-16T03:08:07.7833828Z Resolving deltas:  27% (93785/347350)
+2026-08-16T03:08:07.7998458Z Resolving deltas:  28% (97258/347350)
+2026-08-16T03:08:07.8469758Z Resolving deltas:  29% (100732/347350)
+2026-08-16T03:08:07.8712590Z Resolving deltas:  30% (104205/347350)
+2026-08-16T03:08:07.9723567Z Resolving deltas:  31% (107679/347350)
+2026-08-16T03:08:07.9940774Z Resolving deltas:  32% (111152/347350)
+2026-08-16T03:08:08.0060334Z Resolving deltas:  33% (114626/347350)
+2026-08-16T03:08:08.0328040Z Resolving deltas:  34% (118099/347350)
+2026-08-16T03:08:08.0429576Z Resolving deltas:  35% (121573/347350)
+2026-08-16T03:08:08.0463792Z Resolving deltas:  36% (125047/347350)
+2026-08-16T03:08:08.0504273Z Resolving deltas:  37% (128520/347350)
+2026-08-16T03:08:08.0542979Z Resolving deltas:  38% (131993/347350)
+2026-08-16T03:08:08.0633115Z Resolving deltas:  39% (135467/347350)
+2026-08-16T03:08:08.0635076Z Resolving deltas:  40% (138940/347350)
+2026-08-16T03:08:08.0646549Z Resolving deltas:  41% (142414/347350)
+2026-08-16T03:08:08.0689181Z Resolving deltas:  42% (145887/347350)
+2026-08-16T03:08:08.0721030Z Resolving deltas:  43% (149361/347350)
+2026-08-16T03:08:08.0722974Z Resolving deltas:  43% (152636/347350)
+2026-08-16T03:08:08.0769209Z Resolving deltas:  44% (152834/347350)
+2026-08-16T03:08:08.1038376Z Resolving deltas:  45% (156308/347350)
+2026-08-16T03:08:08.1313201Z Resolving deltas:  46% (159781/347350)
+2026-08-16T03:08:08.1495026Z Resolving deltas:  47% (163255/347350)
+2026-08-16T03:08:08.1865648Z Resolving deltas:  48% (166728/347350)
+2026-08-16T03:08:08.1870173Z Resolving deltas:  49% (170202/347350)
+2026-08-16T03:08:08.2066120Z Resolving deltas:  50% (173675/347350)
+2026-08-16T03:08:08.2351028Z Resolving deltas:  51% (177149/347350)
+2026-08-16T03:08:08.2528980Z Resolving deltas:  52% (180622/347350)
+2026-08-16T03:08:08.2864452Z Resolving deltas:  53% (184096/347350)
+2026-08-16T03:08:08.3234164Z Resolving deltas:  54% (187569/347350)
+2026-08-16T03:08:08.3511800Z Resolving deltas:  55% (191043/347350)
+2026-08-16T03:08:08.3852281Z Resolving deltas:  56% (194516/347350)
+2026-08-16T03:08:08.4152197Z Resolving deltas:  57% (197990/347350)
+2026-08-16T03:08:08.4331816Z Resolving deltas:  58% (201463/347350)
+2026-08-16T03:08:08.4365321Z Resolving deltas:  59% (204937/347350)
+2026-08-16T03:08:08.4636082Z Resolving deltas:  60% (208410/347350)
+2026-08-16T03:08:08.6206541Z Resolving deltas:  61% (211884/347350)
+2026-08-16T03:08:08.6256925Z Resolving deltas:  62% (215357/347350)
+2026-08-16T03:08:08.6314606Z Resolving deltas:  63% (218831/347350)
+2026-08-16T03:08:08.6320412Z Resolving deltas:  64% (222304/347350)
+2026-08-16T03:08:08.6342889Z Resolving deltas:  65% (225778/347350)
+2026-08-16T03:08:08.6358100Z Resolving deltas:  66% (229251/347350)
+2026-08-16T03:08:08.6381781Z Resolving deltas:  67% (232725/347350)
+2026-08-16T03:08:08.6525351Z Resolving deltas:  68% (236198/347350)
+2026-08-16T03:08:08.6933893Z Resolving deltas:  69% (239672/347350)
+2026-08-16T03:08:08.7035808Z Resolving deltas:  70% (243145/347350)
+2026-08-16T03:08:08.7325113Z Resolving deltas:  71% (246619/347350)
+2026-08-16T03:08:08.7447151Z Resolving deltas:  72% (250092/347350)
+2026-08-16T03:08:08.7857108Z Resolving deltas:  73% (253566/347350)
+2026-08-16T03:08:08.8124281Z Resolving deltas:  74% (257039/347350)
+2026-08-16T03:08:08.8139032Z Resolving deltas:  75% (260513/347350)
+2026-08-16T03:08:08.8387341Z Resolving deltas:  76% (263986/347350)
+2026-08-16T03:08:08.8635539Z Resolving deltas:  77% (267460/347350)
+2026-08-16T03:08:08.8855846Z Resolving deltas:  78% (270934/347350)
+2026-08-16T03:08:08.9130783Z Resolving deltas:  79% (274407/347350)
+2026-08-16T03:08:08.9566019Z Resolving deltas:  80% (277880/347350)
+2026-08-16T03:08:08.9585003Z Resolving deltas:  81% (281354/347350)
+2026-08-16T03:08:08.9763942Z Resolving deltas:  82% (284827/347350)
+2026-08-16T03:08:08.9978138Z Resolving deltas:  83% (288301/347350)
+2026-08-16T03:08:09.0148894Z Resolving deltas:  84% (291774/347350)
+2026-08-16T03:08:09.0346509Z Resolving deltas:  85% (295249/347350)
+2026-08-16T03:08:09.0648767Z Resolving deltas:  85% (297022/347350)
+2026-08-16T03:08:09.0777428Z Resolving deltas:  86% (298721/347350)
+2026-08-16T03:08:09.0995556Z Resolving deltas:  87% (302195/347350)
+2026-08-16T03:08:09.1249232Z Resolving deltas:  88% (305668/347350)
+2026-08-16T03:08:09.2016689Z Resolving deltas:  89% (309142/347350)
+2026-08-16T03:08:09.2029605Z Resolving deltas:  90% (312615/347350)
+2026-08-16T03:08:09.2138114Z Resolving deltas:  91% (316089/347350)
+2026-08-16T03:08:09.2226684Z Resolving deltas:  92% (319562/347350)
+2026-08-16T03:08:09.2442032Z Resolving deltas:  93% (323036/347350)
+2026-08-16T03:08:09.2672211Z Resolving deltas:  94% (326509/347350)
+2026-08-16T03:08:09.2913199Z Resolving deltas:  95% (329983/347350)
+2026-08-16T03:08:09.3358852Z Resolving deltas:  96% (333456/347350)
+2026-08-16T03:08:09.3815742Z Resolving deltas:  97% (336930/347350)
+2026-08-16T03:08:09.3817246Z Resolving deltas:  98% (340403/347350)
+2026-08-16T03:08:09.3817856Z Resolving deltas:  99% (343877/347350)
+2026-08-16T03:08:09.3818590Z Resolving deltas: 100% (347350/347350)
+2026-08-16T03:08:09.3819299Z Resolving deltas: 100% (347350/347350), done.
+2026-08-16T03:08:12.3570313Z From https://github.com/conda-forge/staged-recipes
+2026-08-16T03:08:12.3572250Z  * [new branch]            NeoGeographyToolkit/main -> origin/NeoGeographyToolkit/main
+2026-08-16T03:08:12.3573182Z  * [new branch]            beckermr-patch-1      -> origin/beckermr-patch-1
+2026-08-16T03:08:12.3574318Z  * [new branch]            beckermr-patch-2      -> origin/beckermr-patch-2
+2026-08-16T03:08:12.3576414Z  * [new branch]            beckermr-patch-3      -> origin/beckermr-patch-3
+2026-08-16T03:08:12.3577503Z  * [new branch]            beckermr-patch-4      -> origin/beckermr-patch-4
+2026-08-16T03:08:12.3580122Z  * [new branch]            beckermr-patch-5      -> origin/beckermr-patch-5
+2026-08-16T03:08:12.3580867Z  * [new branch]            dependabot/github_actions/github-actions-8dc4d394ed -> origin/dependabot/github_actions/github-actions-8dc4d394ed
+2026-08-16T03:08:12.3581858Z  * [new branch]            main                  -> origin/main
+2026-08-16T03:08:12.3582619Z  * [new branch]            revert-20615-vtkbool  -> origin/revert-20615-vtkbool
+2026-08-16T03:08:12.3583260Z  * [new branch]            revert-27965-add-b2   -> origin/revert-27965-add-b2
+2026-08-16T03:08:12.3583911Z  * [new branch]            revert-33211-tssh     -> origin/revert-33211-tssh
+2026-08-16T03:08:12.3584515Z  * [new ref]               refs/pull/34544/merge -> pull/34544/merge
+2026-08-16T03:08:12.3702968Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin   +e4711fda993f972736bac590f017e6091235a1a7
+2026-08-16T03:08:12.7792669Z From https://github.com/conda-forge/staged-recipes
+2026-08-16T03:08:12.7794845Z  * branch                  e4711fda993f972736bac590f017e6091235a1a7 -> FETCH_HEAD
+2026-08-16T03:08:12.8106567Z ##[command]git checkout --progress --force refs/remotes/pull/34544/merge
+2026-08-16T03:08:12.8715605Z Note: switching to 'refs/remotes/pull/34544/merge'.
+2026-08-16T03:08:12.8716365Z 
+2026-08-16T03:08:12.8716769Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-08-16T03:08:12.8717461Z changes and commit them, and you can discard any commits you make in this
+2026-08-16T03:08:12.8718057Z state without impacting any branches by switching back to a branch.
+2026-08-16T03:08:12.8718368Z 
+2026-08-16T03:08:12.8718654Z If you want to create a new branch to retain commits you create, you may
+2026-08-16T03:08:12.8719108Z do so (now or later) by using -c with the switch command. Example:
+2026-08-16T03:08:12.8719363Z 
+2026-08-16T03:08:12.8719641Z   git switch -c <new-branch-name>
+2026-08-16T03:08:12.8719905Z 
+2026-08-16T03:08:12.8720257Z Or undo this operation with:
+2026-08-16T03:08:12.8720486Z 
+2026-08-16T03:08:12.8720807Z   git switch -
+2026-08-16T03:08:12.8721029Z 
+2026-08-16T03:08:12.8721522Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-08-16T03:08:12.8721975Z 
+2026-08-16T03:08:12.8722392Z HEAD is now at e4711fda99 Merge 7b809f4f4455616195df5b0bff7ea8827e6a997d into 41d4c7d20f6e448e4119048060ad4c926e2faa82
+2026-08-16T03:08:12.8780020Z ##[section]Finishing: Checkout conda-forge/staged-recipes@refs/pull/34544/merge to s
+2026-08-16T03:08:12.8817906Z ##[section]Starting: Build recipes
+2026-08-16T03:08:12.8825208Z ==============================================================================
+2026-08-16T03:08:12.8825615Z Task         : Command line
+2026-08-16T03:08:12.8825762Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2026-08-16T03:08:12.8826114Z Version      : 2.276.0
+2026-08-16T03:08:12.8826389Z Author       : Microsoft Corporation
+2026-08-16T03:08:12.8826675Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2026-08-16T03:08:12.8826973Z ==============================================================================
+2026-08-16T03:08:19.1505095Z Generating script.
+2026-08-16T03:08:19.1577586Z Script contents: shell
+2026-08-16T03:08:19.1586082Z call .scripts\run_win_build.bat
+2026-08-16T03:08:19.1809487Z ========================== Starting Command Output ===========================
+2026-08-16T03:08:19.2071078Z ##[command]"C:\Windows\system32\cmd.exe" /D /E:ON /V:OFF /S /C "CALL "D:\a\_temp\df05ee60-aa15-4b0f-86f0-fd225aceb0f7.cmd""
+2026-08-16T03:08:19.2211580Z ##[group]Provisioning build tools
+2026-08-16T03:08:19.7832923Z Downloading micromamba 1.5.10-0
+2026-08-16T03:08:19.7833846Z if not exist "C:\Users\VSSADM~1\AppData\Local\Temp\micromamba-27920" mkdir "C:\Users\VSSADM~1\AppData\Local\Temp\micromamba-27920"
+2026-08-16T03:08:19.7834515Z certutil -urlcache -split -f "https://github.com/mamba-org/micromamba-releases/releases/download/1.5.10-0/micromamba-win-64" "C:\Users\VSSADM~1\AppData\Local\Temp\micromamba-27920\micromamba.exe"
+2026-08-16T03:08:20.4955734Z ****  Online  ****
+2026-08-16T03:08:21.1995463Z   000000  ...
+2026-08-16T03:08:21.1996162Z   891a00
+2026-08-16T03:08:21.2108625Z CertUtil: -URLCache command completed successfully.
+2026-08-16T03:08:21.2494836Z Creating environment
+2026-08-16T03:08:53.1896286Z 
+2026-08-16T03:08:53.1898896Z Transaction
+2026-08-16T03:08:53.1903153Z 
+2026-08-16T03:08:53.1904304Z   Prefix: D:\Miniforge
+2026-08-16T03:08:53.1904884Z 
+2026-08-16T03:08:53.1905425Z   Updating specs:
+2026-08-16T03:08:53.1905817Z 
+2026-08-16T03:08:53.1906346Z    - python=3.12
+2026-08-16T03:08:53.1907086Z    - conda[version='>=25.9.0']
+2026-08-16T03:08:53.1907647Z    - conda-libmamba-solver[version='>=24.9.0']
+2026-08-16T03:08:53.1908205Z    - conda-build[version='>=25.3.1']
+2026-08-16T03:08:53.1908770Z    - conda-index[version='>=0.3.0']
+2026-08-16T03:08:53.1909362Z    - conda-forge-ci-setup[version='>=4.9.3,<5.0']
+2026-08-16T03:08:53.1909942Z    - conda-forge-pinning=*
+2026-08-16T03:08:53.1910472Z    - frozendict=*
+2026-08-16T03:08:53.1910963Z    - networkx=2.4
+2026-08-16T03:08:53.1930746Z    - rattler-build-conda-compat[version='>=1.2.0,<2.0.0a0']
+2026-08-16T03:08:53.1931695Z 
+2026-08-16T03:08:53.1932089Z 
+2026-08-16T03:08:53.2712153Z   Package                                     Version  Build               Channel          Size
+2026-08-16T03:08:53.2714309Z --------------------------------------------------------------------------------------------------
+2026-08-16T03:08:53.2714872Z   Install:
+2026-08-16T03:08:53.2715293Z --------------------------------------------------------------------------------------------------
+2026-08-16T03:08:53.2715618Z 
+2026-08-16T03:08:53.2716002Z   + conda-forge-pinning           2026.08.15.20.40.42  hd8ed1ab_0          conda-forge      68kB
+2026-08-16T03:08:53.2716437Z   + python_abi                                   3.12  8_cp312             conda-forge       7kB
+2026-08-16T03:08:53.2716868Z   + tzdata                                      2026c  h151e31d_0          conda-forge     119kB
+2026-08-16T03:08:53.2717302Z   + ca-certificates                         2026.7.22  h4c7d964_0          conda-forge     132kB
+2026-08-16T03:08:53.2717731Z   + conda-env                                   2.6.0  1                   conda-forge       2kB
+2026-08-16T03:08:53.2719426Z   + nlohmann_json-abi                          3.12.0  h0f90c79_2          conda-forge       4kB
+2026-08-16T03:08:53.2720063Z   + pybind11-abi                                   11  hc364b38_1          conda-forge      15kB
+2026-08-16T03:08:53.2720505Z   + m2-conda-epoch                           20250515  0_x86_64            conda-forge       8kB
+2026-08-16T03:08:53.2721164Z   + ucrt                                 10.0.26100.0  h57928b3_0          conda-forge     695kB
+2026-08-16T03:08:53.2721657Z   + libwinpthread               12.0.0.r4.gg4f2fc60ca  h57928b3_10         conda-forge      37kB
+2026-08-16T03:08:53.2722123Z   + vcomp14                               14.51.36247  habf1de7_41         conda-forge     156kB
+2026-08-16T03:08:53.2722555Z   + libgomp                                    16.1.0  h8ee18e1_1          conda-forge     682kB
+2026-08-16T03:08:53.2723017Z   + vc14_runtime                          14.51.36247  habf1de7_41         conda-forge     768kB
+2026-08-16T03:08:53.2723547Z   + _openmp_mutex                                 4.5  20_gnu              conda-forge      52kB
+2026-08-16T03:08:53.2723984Z   + vc                                           14.5  ha367084_41         conda-forge      21kB
+2026-08-16T03:08:53.2724430Z   + libgcc                                     16.1.0  h110b43a_1          conda-forge     820kB
+2026-08-16T03:08:53.2724887Z   + libiconv                                     1.18  hc1393d2_2          conda-forge     697kB
+2026-08-16T03:08:53.2725305Z   + icu                                          78.3  h5112557_2          conda-forge      17MB
+2026-08-16T03:08:53.2725708Z   + simdjson                                    4.6.7  h477610d_0          conda-forge     419kB
+2026-08-16T03:08:53.2726126Z   + libmsgpack-c                                6.1.0  h5112557_7          conda-forge      41kB
+2026-08-16T03:08:53.2726565Z   + cpp-expected                                1.3.1  h477610d_1          conda-forge      22kB
+2026-08-16T03:08:53.2727019Z   + yaml-cpp                                    0.8.0  h5112557_1          conda-forge     150kB
+2026-08-16T03:08:53.2727446Z   + fmt                                        12.1.0  h1ced75a_1          conda-forge     188kB
+2026-08-16T03:08:53.2727871Z   + reproc                               14.2.7.post0  h5112557_2          conda-forge      39kB
+2026-08-16T03:08:53.2728462Z   + tk                                         8.6.13  h967ab96_3          conda-forge       4MB
+2026-08-16T03:08:53.2728889Z   + lz4-c                                      1.10.0  h6a83c73_2          conda-forge     151kB
+2026-08-16T03:08:53.2729325Z   + lzo                                          2.10  h6a83c73_1002       conda-forge     166kB
+2026-08-16T03:08:53.2729761Z   + libdeflate                                   1.25  h1a1d4e4_1          conda-forge     158kB
+2026-08-16T03:08:53.2730195Z   + lerc                                        4.2.0  hd936e49_0          conda-forge     175kB
+2026-08-16T03:08:53.2730598Z   + libwebp-base                                1.6.0  h4d5522a_1          conda-forge     279kB
+2026-08-16T03:08:53.2731038Z   + libjpeg-turbo                               3.2.0  hfd05255_1          conda-forge     990kB
+2026-08-16T03:08:53.2731422Z   + zlib-ng                                     2.3.3  h0261ad2_1          conda-forge     125kB
+2026-08-16T03:08:53.2731926Z   + libsodium                                  1.0.22  h6a83c73_1          conda-forge     280kB
+2026-08-16T03:08:53.2732343Z   + openssl                                     3.6.3  hf411b9b_1          conda-forge       9MB
+2026-08-16T03:08:53.2732762Z   + libzlib                                     1.3.2  hfd05255_3          conda-forge      59kB
+2026-08-16T03:08:53.2733167Z   + liblzma                                     5.8.3  hfd05255_1          conda-forge     106kB
+2026-08-16T03:08:53.2733558Z   + libexpat                                    2.8.1  hac47afa_1          conda-forge      72kB
+2026-08-16T03:08:53.2733962Z   + bzip2                                       1.0.8  h0ad9c76_10         conda-forge      56kB
+2026-08-16T03:08:53.2735150Z   + yaml                                        0.2.5  h6a83c73_3          conda-forge      64kB
+2026-08-16T03:08:53.2735682Z   + ripgrep                                    15.2.0  h77a83cd_0          conda-forge       2MB
+2026-08-16T03:08:53.2736109Z   + mbedtls                                   3.6.3.1  he0c23c2_0          conda-forge       1MB
+2026-08-16T03:08:53.2736515Z   + rattler-build                              0.73.0  he94b42d_0          conda-forge      20MB
+2026-08-16T03:08:53.2736923Z   + libsqlite                                  3.53.4  hf5d6505_0          conda-forge       1MB
+2026-08-16T03:08:53.2737312Z   + libffi                                      3.7.0  h3d046cb_0          conda-forge      50kB
+2026-08-16T03:08:53.2737678Z   + xorg-libxau                                1.0.12  hba3369d_2          conda-forge     110kB
+2026-08-16T03:08:53.2738030Z   + xorg-libxdmcp                               1.1.5  hba3369d_2          conda-forge      71kB
+2026-08-16T03:08:53.2738427Z   + pthread-stubs                                 0.4  hba3369d_1003       conda-forge      10kB
+2026-08-16T03:08:53.2738838Z   + libpsl                                     0.23.1  h9b16d47_0          conda-forge      73kB
+2026-08-16T03:08:53.2739250Z   + spdlog                                     1.17.0  hd227c35_2          conda-forge     175kB
+2026-08-16T03:08:53.2739661Z   + reproc-cpp                           14.2.7.post0  h03e4b45_2          conda-forge      32kB
+2026-08-16T03:08:53.2740076Z   + krb5                                       1.22.2  h719d79b_2          conda-forge     753kB
+2026-08-16T03:08:53.2740540Z   + libssh2                                    1.11.1  h734d217_1          conda-forge     295kB
+2026-08-16T03:08:53.2740939Z   + libsolv                                    0.7.39  h8883371_0          conda-forge     469kB
+2026-08-16T03:08:53.2741343Z   + libpng                                     1.6.58  hdc8cecf_1          conda-forge     385kB
+2026-08-16T03:08:53.2741759Z   + zstd                                        1.5.7  h534d264_7          conda-forge     388kB
+2026-08-16T03:08:53.2742176Z   + libxml2-16                                 2.15.3  h3cfd58e_0          conda-forge     520kB
+2026-08-16T03:08:53.2742717Z   + liblief                                    0.17.6  hac47afa_0          conda-forge       2MB
+2026-08-16T03:08:53.2743104Z   + python                                    3.12.13  hb12b558_1_cpython  conda-forge      16MB
+2026-08-16T03:08:53.2743487Z   + libxcb                                     1.17.0  h0e4246c_0          conda-forge       1MB
+2026-08-16T03:08:53.2743899Z   + libcurl                                    8.21.0  hdb0ef4a_4          conda-forge     405kB
+2026-08-16T03:08:53.2744321Z   + libfreetype6                               2.14.3  hdbac1cb_2          conda-forge     340kB
+2026-08-16T03:08:53.2744730Z   + libtiff                                     4.7.2  h8f73337_0          conda-forge       1MB
+2026-08-16T03:08:53.2745134Z   + libxml2                                    2.15.3  h8ef44ab_0          conda-forge      44kB
+2026-08-16T03:08:53.2745527Z   + libfreetype                                2.14.3  h57928b3_2          conda-forge       9kB
+2026-08-16T03:08:53.2745925Z   + openjpeg                                    2.5.4  h0e57b4f_0          conda-forge     246kB
+2026-08-16T03:08:53.2746334Z   + lcms2                                      2.19.1  hf2c6c5f_1          conda-forge     523kB
+2026-08-16T03:08:53.2746752Z   + libarchive                                  3.8.9  gpl_he24518a_100    conda-forge       1MB
+2026-08-16T03:08:53.2747181Z   + libmamba                                    2.9.0  py314h08176f6_0     conda-forge       5MB
+2026-08-16T03:08:53.2747580Z   + mamba                                       2.9.0  heafb4a2_0          conda-forge     437kB
+2026-08-16T03:08:53.2747966Z   + libmamba-spdlog                             2.9.0  h9ac7702_0          conda-forge      18kB
+2026-08-16T03:08:53.2748541Z   + m2-msys2-runtime                          3.6.1.4  hc364b38_6          conda-forge       2MB
+2026-08-16T03:08:53.2748998Z   + setuptools                                 84.0.0  pyh332efcf_0        conda-forge     524kB
+2026-08-16T03:08:53.2749434Z   + packaging                                    26.3  pyhc364b38_0        conda-forge     116kB
+2026-08-16T03:08:53.2749847Z   + m2-filesystem                        2025.02.23.1  hc364b38_10         conda-forge     125kB
+2026-08-16T03:08:53.2750251Z   + m2-libffi                                 3.4.8.1  hc364b38_6          conda-forge      59kB
+2026-08-16T03:08:53.2750617Z   + m2-libsqlite                             3.49.1.2  hc364b38_6          conda-forge     796kB
+2026-08-16T03:08:53.2751097Z   + m2-liblzma                                5.8.1.1  hc364b38_6          conda-forge     116kB
+2026-08-16T03:08:53.2751525Z   + m2-gmp                                    6.3.0.1  hc364b38_6          conda-forge     445kB
+2026-08-16T03:08:53.2751946Z   + m2-libcbor                               0.12.0.1  hc364b38_6          conda-forge      48kB
+2026-08-16T03:08:53.2752364Z   + m2-libopenssl                             3.5.0.1  hc364b38_6          conda-forge       2MB
+2026-08-16T03:08:53.2752777Z   + m2-libxcrypt                             4.4.38.1  hc364b38_6          conda-forge     106kB
+2026-08-16T03:08:53.2753152Z   + m2-gcc-libs                              13.3.0.1  hc364b38_6          conda-forge       1MB
+2026-08-16T03:08:53.2753542Z   + m2-patch                                  2.7.6.3  hc364b38_6          conda-forge     126kB
+2026-08-16T03:08:53.2753948Z   + wheel                                      0.48.0  pyhd8ed1ab_0        conda-forge      35kB
+2026-08-16T03:08:53.2754354Z   + pip                                        26.2.1  pyh8b19718_0        conda-forge       1MB
+2026-08-16T03:08:53.2754755Z   + m2-bash                                 5.2.037.2  hc364b38_6          conda-forge       3MB
+2026-08-16T03:08:53.2755172Z   + m2-openssl                                3.5.0.1  hc364b38_6          conda-forge     735kB
+2026-08-16T03:08:53.2755549Z   + m2-libbz2                                 1.0.8.4  hc364b38_6          conda-forge      58kB
+2026-08-16T03:08:53.2756086Z   + m2-libdb                                 6.2.32.5  hc364b38_6          conda-forge     924kB
+2026-08-16T03:08:53.2756578Z   + m2-libzstd                                1.5.7.1  hc364b38_6          conda-forge     468kB
+2026-08-16T03:08:53.2757000Z   + m2-brotli                                 1.1.0.2  hc364b38_6          conda-forge     427kB
+2026-08-16T03:08:53.2757407Z   + m2-ncurses                         6.5.20240831.2  hc364b38_6          conda-forge       1MB
+2026-08-16T03:08:53.2757789Z   + m2-libiconv                                1.18.1  hc364b38_6          conda-forge     804kB
+2026-08-16T03:08:53.2758196Z   + m2-libnghttp2                            1.65.0.1  hc364b38_6          conda-forge      92kB
+2026-08-16T03:08:53.2758607Z   + m2-zlib                                   1.3.1.1  hc364b38_6          conda-forge      78kB
+2026-08-16T03:08:53.2760038Z   + m2-libpcre2_8                             10.45.1  hc364b38_6          conda-forge     186kB
+2026-08-16T03:08:53.2760536Z   + m2-libexpat                               2.7.1.1  hc364b38_6          conda-forge      87kB
+2026-08-16T03:08:53.2760940Z   + backports                                     1.0  pyhd8ed1ab_5        conda-forge       7kB
+2026-08-16T03:08:53.2761311Z   + cached_property                             1.5.2  pyha770c72_2        conda-forge      15kB
+2026-08-16T03:08:53.2761708Z   + sniffio                                     1.3.1  pyhd8ed1ab_2        conda-forge      16kB
+2026-08-16T03:08:53.2762123Z   + zipp                                        4.1.0  pyhcf101f3_0        conda-forge      24kB
+2026-08-16T03:08:53.2762531Z   + more-itertools                             11.1.0  pyhcf101f3_0        conda-forge      71kB
+2026-08-16T03:08:53.2763064Z   + mdurl                                       0.1.2  pyhd8ed1ab_1        conda-forge      14kB
+2026-08-16T03:08:53.2763470Z   + traitlets                                  5.16.1  pyhcf101f3_0        conda-forge     117kB
+2026-08-16T03:08:53.2763870Z   + python-fastjsonschema                      2.22.1  pyhcf101f3_0        conda-forge     252kB
+2026-08-16T03:08:53.2764272Z   + pygments                                   2.20.0  pyhd8ed1ab_0        conda-forge     893kB
+2026-08-16T03:08:53.2764676Z   + annotated-doc                               0.0.5  pyhcf101f3_0        conda-forge      17kB
+2026-08-16T03:08:53.2765193Z   + shellingham                                 1.5.4  pyhd8ed1ab_2        conda-forge      15kB
+2026-08-16T03:08:53.2765612Z   + python-installer                            1.0.1  pyh332efcf_0        conda-forge     239kB
+2026-08-16T03:08:53.2765992Z   + pkce                                        1.0.3  pyhd8ed1ab_1        conda-forge       9kB
+2026-08-16T03:08:53.2766387Z   + semver                                      3.0.4  pyhcf101f3_1        conda-forge      23kB
+2026-08-16T03:08:53.2766777Z   + python-dotenv                               1.2.2  pyhcf101f3_0        conda-forge      28kB
+2026-08-16T03:08:53.2767190Z   + readchar                                    4.2.2  pyhcf101f3_0        conda-forge      16kB
+2026-08-16T03:08:53.2767675Z   + tomlkit                                    0.15.1  pyhcf101f3_0        conda-forge      49kB
+2026-08-16T03:08:53.2768091Z   + pytz                                 2026.3.post1  pyhcf101f3_0        conda-forge     201kB
+2026-08-16T03:08:53.2768469Z   + jsonpointer                                 3.1.1  pyhcf101f3_0        conda-forge      14kB
+2026-08-16T03:08:53.2768844Z   + attrs                                      26.1.0  pyhcf101f3_0        conda-forge      65kB
+2026-08-16T03:08:53.2769240Z   + win_inet_pton                               1.1.0  pyh7428d3b_8        conda-forge      10kB
+2026-08-16T03:08:53.2769667Z   + certifi                                 2026.7.22  pyhd8ed1ab_0        conda-forge     137kB
+2026-08-16T03:08:53.2770071Z   + idna                                         3.18  pyhcf101f3_0        conda-forge     164kB
+2026-08-16T03:08:53.2770468Z   + colorama                                    0.4.6  pyhd8ed1ab_1        conda-forge      27kB
+2026-08-16T03:08:53.2770966Z   + hyperframe                                  6.1.0  pyhd8ed1ab_0        conda-forge      17kB
+2026-08-16T03:08:53.2771367Z   + hpack                                       4.2.0  pyhd8ed1ab_0        conda-forge      33kB
+2026-08-16T03:08:53.2771772Z   + pycparser                                     3.0  pyhcf101f3_0        conda-forge      56kB
+2026-08-16T03:08:53.2772319Z   + truststore                                 0.10.4  pyhcf101f3_0        conda-forge      24kB
+2026-08-16T03:08:53.2772736Z   + pluggy                                      1.6.0  pyhf9edf01_1        conda-forge      26kB
+2026-08-16T03:08:53.2773146Z   + platformdirs                               4.11.3  pyhcf101f3_0        conda-forge      27kB
+2026-08-16T03:08:53.2773510Z   + archspec                                    0.2.5  pyhd8ed1ab_0        conda-forge      51kB
+2026-08-16T03:08:53.2773896Z   + distro                                      1.9.0  pyhd8ed1ab_1        conda-forge      42kB
+2026-08-16T03:08:53.2774319Z   + charset-normalizer                          3.5.1  pyhd8ed1ab_0        conda-forge      64kB
+2026-08-16T03:08:53.2774746Z   + defusedxml                                  0.7.1  pyhd8ed1ab_0        conda-forge      24kB
+2026-08-16T03:08:53.2775156Z   + joblib                                      1.5.3  pyhd8ed1ab_0        conda-forge     226kB
+2026-08-16T03:08:53.2775546Z   + tomli-w                                     1.2.0  pyhd8ed1ab_0        conda-forge      13kB
+2026-08-16T03:08:53.2775901Z   + cpython                                   3.12.13  py312hd8ed1ab_1     conda-forge      46kB
+2026-08-16T03:08:53.2776928Z   + six                                        1.17.0  pyhe01879c_1        conda-forge      18kB
+2026-08-16T03:08:53.2777521Z   + decorator                                   5.3.1  pyhd8ed1ab_0        conda-forge      16kB
+2026-08-16T03:08:53.2777939Z   + soupsieve                                   2.9.2  pyhd8ed1ab_0        conda-forge      39kB
+2026-08-16T03:08:53.2778310Z   + evalidate                                   2.0.5  pyhe01879c_0        conda-forge      17kB
+2026-08-16T03:08:53.2778728Z   + python-libarchive-c                           5.3  pyhe01879c_1        conda-forge      30kB
+2026-08-16T03:08:53.2779153Z   + pkginfo                                  1.12.1.2  pyhd8ed1ab_0        conda-forge      31kB
+2026-08-16T03:08:53.2779554Z   + chardet                                     7.5.1  pyhcf101f3_0        conda-forge     651kB
+2026-08-16T03:08:53.2779983Z   + filelock                                   3.32.3  pyhd8ed1ab_0        conda-forge      78kB
+2026-08-16T03:08:53.2780417Z   + boltons                                    26.1.0  pyhd8ed1ab_0        conda-forge     309kB
+2026-08-16T03:08:53.2780824Z   + typing_extensions                          4.16.0  pyhcf101f3_0        conda-forge      53kB
+2026-08-16T03:08:53.2781304Z   + tomli                                       2.4.1  pyhcf101f3_0        conda-forge      22kB
+2026-08-16T03:08:53.2781824Z   + frozendict                                  2.4.7  pyh851646a_2        conda-forge      34kB
+2026-08-16T03:08:53.2782313Z   + m2-perl-net-ssleay                         1.94.2  hc364b38_6          conda-forge     266kB
+2026-08-16T03:08:53.2782761Z   + m2-db                                    6.2.32.5  hc364b38_6          conda-forge      81kB
+2026-08-16T03:08:53.2783181Z   + m2-libreadline                          8.2.013.1  hc364b38_6          conda-forge     344kB
+2026-08-16T03:08:53.2783634Z   + m2-libedit                         20240808_3.1.1  hc364b38_6          conda-forge     131kB
+2026-08-16T03:08:53.2784098Z   + m2-libunistring                             1.3.1  hc364b38_6          conda-forge     844kB
+2026-08-16T03:08:53.2784568Z   + m2-libintl                               0.22.5.1  hc364b38_6          conda-forge      79kB
+2026-08-16T03:08:53.2785064Z   + m2-file                                    5.46.2  hc364b38_6          conda-forge     512kB
+2026-08-16T03:08:53.2786194Z   + m2-libfido2                              1.16.0.1  hc364b38_6          conda-forge     108kB
+2026-08-16T03:08:53.2786698Z   + m2-less                                     668.1  hc364b38_6          conda-forge     175kB
+2026-08-16T03:08:53.2787164Z   + backports.tarfile                           1.2.0  pyhcf101f3_2        conda-forge      36kB
+2026-08-16T03:08:53.2787620Z   + cached-property                             1.5.2  hd8ed1ab_2          conda-forge       7kB
+2026-08-16T03:08:53.2788044Z   + importlib_resources                         7.1.0  pyhd8ed1ab_0        conda-forge      35kB
+2026-08-16T03:08:53.2788482Z   + importlib-metadata                          9.0.0  pyhcf101f3_0        conda-forge      35kB
+2026-08-16T03:08:53.2788932Z   + jaraco.functools                            4.6.0  pyhcf101f3_0        conda-forge      19kB
+2026-08-16T03:08:53.2789482Z   + jaraco.classes                              3.4.0  pyhcf101f3_3        conda-forge      15kB
+2026-08-16T03:08:53.2789939Z   + markdown-it-py                              4.2.0  pyhd8ed1ab_0        conda-forge      69kB
+2026-08-16T03:08:53.2790351Z   + jsonpatch                                    1.33  pyhd8ed1ab_1        conda-forge      17kB
+2026-08-16T03:08:53.2790774Z   + pysocks                                     1.7.1  pyh09c184e_7        conda-forge      22kB
+2026-08-16T03:08:53.2791223Z   + click                                       8.4.2  pyh6dadd2b_0        conda-forge     106kB
+2026-08-16T03:08:53.2791672Z   + tqdm                                       4.70.0  pyha7b4d00_0        conda-forge      98kB
+2026-08-16T03:08:53.2792099Z   + h2                                          4.4.1  pyhcf101f3_0        conda-forge     101kB
+2026-08-16T03:08:53.2792754Z   + python-gil                                3.12.13  hd8ed1ab_1          conda-forge      46kB
+2026-08-16T03:08:53.2793296Z   + python-dateutil                       2.9.0.post0  pyhe01879c_2        conda-forge     233kB
+2026-08-16T03:08:53.2793766Z   + networkx                                      2.4  py_1                conda-forge       1MB
+2026-08-16T03:08:53.2794205Z   + exceptiongroup                              1.3.1  pyhd8ed1ab_0        conda-forge      21kB
+2026-08-16T03:08:53.2794656Z   + h11                                        0.16.0  pyhcf101f3_1        conda-forge      39kB
+2026-08-16T03:08:53.2795069Z   + typing-inspection                           0.4.4  pyhcf101f3_0        conda-forge      21kB
+2026-08-16T03:08:53.2795564Z   + pyjwt                                      2.13.0  pyhcf101f3_0        conda-forge      33kB
+2026-08-16T03:08:53.2796052Z   + typing-extensions                          4.16.0  h69aa097_0          conda-forge      94kB
+2026-08-16T03:08:53.2796593Z   + pyproject_hooks                             1.2.0  pyhd8ed1ab_1        conda-forge      16kB
+2026-08-16T03:08:53.2797049Z   + m2-heimdal-libs                           7.8.0.5  hc364b38_6          conda-forge     978kB
+2026-08-16T03:08:53.2797467Z   + m2-libgdbm                                 1.25.1  hc364b38_6          conda-forge      60kB
+2026-08-16T03:08:53.2797900Z   + m2-libidn2                                2.3.8.1  hc364b38_6          conda-forge     200kB
+2026-08-16T03:08:53.2798355Z   + m2-sed                                      4.9.1  hc364b38_6          conda-forge     292kB
+2026-08-16T03:08:53.2798803Z   + m2-findutils                              4.9.0.3  hc364b38_6          conda-forge     554kB
+2026-08-16T03:08:53.2799293Z   + m2-coreutils                               8.32.5  hc364b38_6          conda-forge       3MB
+2026-08-16T03:08:53.2799744Z   + m2-nano                                     8.4.1  hc364b38_6          conda-forge     743kB
+2026-08-16T03:08:53.2800215Z   + m2-gzip                                    1.14.1  hc364b38_6          conda-forge     133kB
+2026-08-16T03:08:53.2800692Z   + jaraco.context                              6.1.2  pyhcf101f3_0        conda-forge      16kB
+2026-08-16T03:08:53.2801273Z   + rich                                       15.0.0  pyhcf101f3_0        conda-forge     209kB
+2026-08-16T03:08:53.2801725Z   + _python_abi3_support                          1.0  hd8ed1ab_3          conda-forge       8kB
+2026-08-16T03:08:53.2802129Z   + anyio                                      4.14.2  pyhcf101f3_0        conda-forge     164kB
+2026-08-16T03:08:53.2802582Z   + annotated-types                             0.8.0  pyhd8ed1ab_0        conda-forge      19kB
+2026-08-16T03:08:53.2803066Z   + beautifulsoup4                             4.15.0  pyha770c72_0        conda-forge      93kB
+2026-08-16T03:08:53.2803529Z   + python-build                                1.5.0  pyhc364b38_0        conda-forge      29kB
+2026-08-16T03:08:53.2804062Z   + m2-heimdal                                7.8.0.5  hc364b38_6          conda-forge     604kB
+2026-08-16T03:08:53.2804559Z   + m2-gdbm                                    1.25.1  hc364b38_6          conda-forge     255kB
+2026-08-16T03:08:53.2804991Z   + m2-libpsl                                0.21.5.2  hc364b38_6          conda-forge      99kB
+2026-08-16T03:08:53.2805431Z   + m2-info                                     7.2.1  hc364b38_6          conda-forge     231kB
+2026-08-16T03:08:53.2805912Z   + typer                                      0.27.1  pyhcf101f3_0        conda-forge     188kB
+2026-08-16T03:08:53.2806386Z   + httpcore                                    1.0.9  pyh29332c3_0        conda-forge      49kB
+2026-08-16T03:08:53.2806810Z   + m2-openssh                                9.9p2.1  hc364b38_6          conda-forge       1MB
+2026-08-16T03:08:53.2807256Z   + m2-perl                                  5.38.4.2  hc364b38_6          conda-forge       9MB
+2026-08-16T03:08:53.2807794Z   + m2-libtasn1                              4.20.0.1  hc364b38_6          conda-forge     128kB
+2026-08-16T03:08:53.2808266Z   + httpx                                      0.28.1  pyhd8ed1ab_0        conda-forge      63kB
+2026-08-16T03:08:53.2808747Z   + m2-perl-timedate                           2.33.2  hc364b38_6          conda-forge      65kB
+2026-08-16T03:08:53.2809230Z   + m2-perl-io-html                           1.004.2  hc364b38_6          conda-forge      45kB
+2026-08-16T03:08:53.2809643Z   + m2-perl-clone                              0.47.1  hc364b38_6          conda-forge      40kB
+2026-08-16T03:08:53.2810089Z   + m2-perl-io-socket-ip                       0.41.2  hc364b38_6          conda-forge      53kB
+2026-08-16T03:08:53.2810572Z   + m2-perl-html-tagset                        3.24.1  hc364b38_6          conda-forge      41kB
+2026-08-16T03:08:53.2811092Z   + m2-perl-io-stringy                        2.113.2  hc364b38_6          conda-forge      74kB
+2026-08-16T03:08:53.2811552Z   + m2-perl-convert-binhex                    1.125.2  hc364b38_6          conda-forge      60kB
+2026-08-16T03:08:53.2811978Z   + m2-perl-try-tiny                           0.32.1  hc364b38_6          conda-forge      49kB
+2026-08-16T03:08:53.2812438Z   + m2-perl-uri                                5.31.1  hc364b38_6          conda-forge     128kB
+2026-08-16T03:08:53.2812907Z   + m2-perl-net-http                           6.23.1  hc364b38_6          conda-forge      53kB
+2026-08-16T03:08:53.2813416Z   + m2-perl-lwp-mediatypes                     6.04.2  hc364b38_6          conda-forge      50kB
+2026-08-16T03:08:53.2813871Z   + m2-perl-http-date                          6.06.1  hc364b38_6          conda-forge      39kB
+2026-08-16T03:08:53.2814317Z   + m2-perl-encode-locale                      1.05.2  hc364b38_6          conda-forge      41kB
+2026-08-16T03:08:53.2814845Z   + m2-perl-termreadkey                        2.38.6  hc364b38_6          conda-forge      51kB
+2026-08-16T03:08:53.2815301Z   + m2-perl-error                           0.17030.1  hc364b38_6          conda-forge      51kB
+2026-08-16T03:08:53.2815788Z   + m2-perl-authen-sasl                      2.1800.1  hc364b38_6          conda-forge      69kB
+2026-08-16T03:08:53.2816384Z   + m2-libp11-kit                            0.25.5.2  hc364b38_6          conda-forge     323kB
+2026-08-16T03:08:53.2816803Z   + m2-perl-mailtools                          2.22.1  hc364b38_6          conda-forge      89kB
+2026-08-16T03:08:53.2817253Z   + m2-perl-io-socket-ssl                     2.089.1  hc364b38_6          conda-forge     206kB
+2026-08-16T03:08:53.2817736Z   + m2-perl-www-robotrules                     6.02.3  hc364b38_6          conda-forge      42kB
+2026-08-16T03:08:53.2818294Z   + m2-perl-http-cookiejar                    0.014.1  hc364b38_6          conda-forge      44kB
+2026-08-16T03:08:53.2818744Z   + m2-perl-file-listing                       6.16.1  hc364b38_6          conda-forge      40kB
+2026-08-16T03:08:53.2819239Z   + m2-perl-http-message                       7.00.1  hc364b38_6          conda-forge     106kB
+2026-08-16T03:08:53.2819762Z   + m2-p11-kit                               0.25.5.2  hc364b38_6          conda-forge     569kB
+2026-08-16T03:08:53.2820243Z   + m2-perl-mime-tools                        5.515.1  hc364b38_6          conda-forge     216kB
+2026-08-16T03:08:53.2820742Z   + m2-perl-net-smtp-ssl                       1.04.2  hc364b38_6          conda-forge      35kB
+2026-08-16T03:08:53.2821174Z   + m2-perl-http-negotiate                     6.01.3  hc364b38_6          conda-forge      43kB
+2026-08-16T03:08:53.2821641Z   + m2-perl-http-daemon                        6.16.1  hc364b38_6          conda-forge      50kB
+2026-08-16T03:08:53.2822164Z   + m2-perl-http-cookies                       6.11.1  hc364b38_6          conda-forge      52kB
+2026-08-16T03:08:53.2822707Z   + m2-perl-html-parser                        3.83.1  hc364b38_6          conda-forge     111kB
+2026-08-16T03:08:53.2823286Z   + m2-ca-certificates                     20241223.1  hc364b38_6          conda-forge     437kB
+2026-08-16T03:08:53.2823734Z   + m2-perl-libwww                             6.78.1  hc364b38_6          conda-forge     165kB
+2026-08-16T03:08:53.2824384Z   + m2-libssh2                               1.11.1.1  hc364b38_6          conda-forge     272kB
+2026-08-16T03:08:53.2824850Z   + m2-libcurl                                8.9.1.1  hc364b38_6          conda-forge     368kB
+2026-08-16T03:08:53.2825309Z   + m2-curl                                   8.9.1.1  hc364b38_6          conda-forge     857kB
+2026-08-16T03:08:53.2825777Z   + m2-git                                   2.49.0.1  hc364b38_6          conda-forge      55MB
+2026-08-16T03:08:53.2826229Z   + libmambapy                                  2.9.0  py312h2a788e3_0     conda-forge     594kB
+2026-08-16T03:08:53.2826680Z   + pywin32                                       312  py312h829343e_0     conda-forge       4MB
+2026-08-16T03:08:53.2827183Z   + pywin32-ctypes                              0.2.3  py312h2e8e312_3     conda-forge      58kB
+2026-08-16T03:08:53.2827680Z   + pillow                                     12.3.0  py312h31f0997_0     conda-forge     949kB
+2026-08-16T03:08:53.2828119Z   + rpds-py                                  2026.6.3  py312hd944d65_0     conda-forge     218kB
+2026-08-16T03:08:53.2828568Z   + brotli-python                               1.2.0  py312ha763cb9_3     conda-forge     337kB
+2026-08-16T03:08:53.2829030Z   + backports.zstd                              1.6.0  py312h06d0912_0     conda-forge     239kB
+2026-08-16T03:08:53.2829618Z   + pycosat                                     0.6.6  py312he06e257_4     conda-forge      79kB
+2026-08-16T03:08:53.2830079Z   + ruamel.yaml.clib                           0.2.15  py312he5662c2_1     conda-forge     106kB
+2026-08-16T03:08:53.2830522Z   + pyyaml                                      6.0.3  py312h05f76fc_1     conda-forge     180kB
+2026-08-16T03:08:53.2830955Z   + py-lief                                    0.17.6  py312hbb81ca0_0     conda-forge       1MB
+2026-08-16T03:08:53.2831433Z   + psutil                                      7.2.2  py312he5662c2_0     conda-forge     243kB
+2026-08-16T03:08:53.2831965Z   + msgpack-python                              1.2.1  py312h78d62e6_1     conda-forge      89kB
+2026-08-16T03:08:53.2832528Z   + wrapt                                       2.3.0  py312he06e257_0     conda-forge     114kB
+2026-08-16T03:08:53.2833019Z   + markupsafe                                  3.0.3  py312h05f76fc_1     conda-forge      29kB
+2026-08-16T03:08:53.2833460Z   + cffi                                        2.1.1  py312he06e257_2     conda-forge     345kB
+2026-08-16T03:08:53.2833933Z   + menuinst                                    2.5.2  py312ha1a9051_1     conda-forge     191kB
+2026-08-16T03:08:53.2834393Z   + pydantic-core                              2.46.4  py312hdabe01f_0     conda-forge       2MB
+2026-08-16T03:08:53.2834852Z   + py-rattler-build                           0.72.2  py310hdba2031_0     conda-forge      18MB
+2026-08-16T03:08:53.2835277Z   + py-rattler                                 0.25.0  py310hb39080a_2     conda-forge      13MB
+2026-08-16T03:08:53.2835704Z   + ruamel.yaml                               0.18.17  py312he5662c2_2     conda-forge     286kB
+2026-08-16T03:08:53.2836208Z   + zstandard                                  0.25.0  py312he5662c2_1     conda-forge     375kB
+2026-08-16T03:08:53.2836769Z   + pynacl                                      1.6.2  py312h297b7f0_3     conda-forge       1MB
+2026-08-16T03:08:53.2837241Z   + cryptography                               50.0.0  py312h232196e_0     conda-forge       2MB
+2026-08-16T03:08:53.2837715Z   + conda-libmamba-solver                      26.7.0  pyhcf101f3_0        conda-forge      47kB
+2026-08-16T03:08:53.2838162Z   + jupyter_core                                5.9.1  pyh6dadd2b_0        conda-forge      65kB
+2026-08-16T03:08:53.2839072Z   + keyring                                    25.7.0  pyh7428d3b_0        conda-forge      38kB
+2026-08-16T03:08:53.2839596Z   + referencing                                0.37.0  pyhcf101f3_0        conda-forge      52kB
+2026-08-16T03:08:53.2840067Z   + conda-package-streaming                    0.13.0  pyhd8ed1ab_0        conda-forge      24kB
+2026-08-16T03:08:53.2840526Z   + urllib3                                     2.7.0  pyhd8ed1ab_0        conda-forge     104kB
+2026-08-16T03:08:53.2841009Z   + shyaml                                      0.6.2  pyhd3deb0d_0        conda-forge      22kB
+2026-08-16T03:08:53.2841508Z   + deprecated                                  1.3.1  pyhd8ed1ab_1        conda-forge      16kB
+2026-08-16T03:08:53.2841979Z   + jinja2                                      3.1.6  pyhcf101f3_1        conda-forge     121kB
+2026-08-16T03:08:53.2842446Z   + pydantic                                   2.13.4  pyhcf101f3_0        conda-forge     347kB
+2026-08-16T03:08:53.2842859Z   + jsonschema-specifications                2025.9.1  pyhcf101f3_0        conda-forge      19kB
+2026-08-16T03:08:53.2843353Z   + requests                                   2.34.2  pyhcf101f3_0        conda-forge      69kB
+2026-08-16T03:08:53.2843839Z   + pydantic-settings                          2.15.0  pyhcf101f3_0        conda-forge      61kB
+2026-08-16T03:08:53.2844395Z   + jsonschema                                 4.26.0  pyhcf101f3_0        conda-forge      82kB
+2026-08-16T03:08:53.2844854Z   + unearth                                    0.18.3  pyhd8ed1ab_0        conda-forge     289kB
+2026-08-16T03:08:53.2845326Z   + requests-toolbelt                           1.0.0  pyhd8ed1ab_1        conda-forge      44kB
+2026-08-16T03:08:53.2845786Z   + conda-package-handling                      2.5.0  pyhcf101f3_0        conda-forge     256kB
+2026-08-16T03:08:53.2846248Z   + pygithub                                    2.9.1  pyhd8ed1ab_0        conda-forge     184kB
+2026-08-16T03:08:53.2846727Z   + anaconda-cli-base                           0.8.2  pyhc364b38_0        conda-forge      30kB
+2026-08-16T03:08:53.2847196Z   + nbformat                                   5.11.0  pyhcf101f3_1        conda-forge     108kB
+2026-08-16T03:08:53.2847591Z   + oras-py                                    0.1.14  pyhd8ed1ab_0        conda-forge      34kB
+2026-08-16T03:08:53.2848295Z   + anaconda-auth                              0.15.1  pyhd8ed1ab_0        conda-forge      54kB
+2026-08-16T03:08:53.2848788Z   + conda-oci-mirror                            0.2.3  pyhd8ed1ab_1        conda-forge      34kB
+2026-08-16T03:08:53.2849254Z   + anaconda-client                            1.14.1  pyhcf101f3_0        conda-forge      83kB
+2026-08-16T03:08:53.2849695Z   + conda-forge-metadata                       0.16.1  pyhcf101f3_0        conda-forge      20kB
+2026-08-16T03:08:53.2850134Z   + conda                                      26.7.0  py312h209ec74_0     conda-forge       1MB
+2026-08-16T03:08:53.2850636Z   + conda-lockfiles                             0.2.1  pyhd8ed1ab_0        conda-forge      21kB
+2026-08-16T03:08:53.2851099Z   + conda-index                                0.12.1  pyhd8ed1ab_0        conda-forge     211kB
+2026-08-16T03:08:53.2851617Z   + conda-pypi                                 0.11.0  py312h209ec74_1     conda-forge     318kB
+2026-08-16T03:08:53.2852068Z   + conda-rattler-solver                        0.1.1  pyhcf101f3_0        conda-forge      37kB
+2026-08-16T03:08:53.2852495Z   + conda-self                                  0.2.1  pyhd8ed1ab_0        conda-forge      23kB
+2026-08-16T03:08:53.2852915Z   + conda-build                                26.7.0  pyhe63316d_0        conda-forge     326kB
+2026-08-16T03:08:53.2853395Z   + rattler-build-conda-compat                 1.4.19  pyhd8ed1ab_0        conda-forge      53kB
+2026-08-16T03:08:53.2853893Z   + conda-forge-ci-setup                       4.26.1  py312h3368cd0_100   conda-forge     112kB
+2026-08-16T03:08:53.2854197Z 
+2026-08-16T03:08:53.2854529Z   Summary:
+2026-08-16T03:08:53.2854709Z 
+2026-08-16T03:08:53.2855595Z   Install: 295 packages
+2026-08-16T03:08:53.2855942Z 
+2026-08-16T03:08:53.2856333Z   Total download: 251MB
+2026-08-16T03:08:53.2856547Z 
+2026-08-16T03:08:53.2856977Z --------------------------------------------------------------------------------------------------
+2026-08-16T03:08:53.2857337Z 
+2026-08-16T03:08:53.2857510Z 
+2026-08-16T03:08:53.2858242Z 
+2026-08-16T03:08:53.2871538Z Transaction starting
+2026-08-16T03:09:22.5764013Z 
+2026-08-16T03:09:25.4589173Z warning  libmamba [conda-26.7.0-py312h209ec74_0] The following files were already present in the environment:
+2026-08-16T03:09:25.4591585Z     - Scripts\activate.bat
+2026-08-16T03:09:25.4592449Z     - condabin\activate.bat
+2026-08-16T03:09:26.1488718Z 
+2026-08-16T03:09:26.1489925Z Transaction finished
+2026-08-16T03:09:26.1490300Z 
+2026-08-16T03:09:26.1490904Z To activate this environment, use:
+2026-08-16T03:09:26.1491248Z 
+2026-08-16T03:09:26.1491719Z     micromamba activate D:\Miniforge
+2026-08-16T03:09:26.1492073Z 
+2026-08-16T03:09:26.1492612Z Or to execute a single command in this environment, use:
+2026-08-16T03:09:26.1493200Z 
+2026-08-16T03:09:26.1494368Z     micromamba run -p D:\Miniforge mycommand
+2026-08-16T03:09:26.1494705Z 
+2026-08-16T03:09:26.2100620Z Moving pkgs cache from D:\Miniforge-micromamba-3227 to D:\Miniforge
+2026-08-16T03:09:26.2515563Z Removing D:\Miniforge-micromamba-3227
+2026-08-16T03:09:26.2710916Z ##[endgroup]
+2026-08-16T03:09:26.2739003Z ##[group]Configuring conda
+2026-08-16T03:09:26.2748188Z Activating "D:\Miniforge"
+2026-08-16T03:09:26.3743000Z Setting up configuration
+2026-08-16T03:09:38.5411650Z Run conda_forge_build_setup
+2026-08-16T03:09:49.2631686Z Could Not Find C:\Windows\System32\libcrypto-1_1-x64.dll
+2026-08-16T03:09:49.2632481Z Could Not Find C:\Windows\System32\libssl-1_1-x64.dll
+2026-08-16T03:09:49.2632993Z Could Not Find C:\Windows\System32\msmpi.dll
+2026-08-16T03:09:49.2633497Z Could Not Find C:\Windows\System32\msmpires.dll
+2026-08-16T03:09:50.8876715Z go_compiler:
+2026-08-16T03:09:50.8877695Z   - go-nocgo
+2026-08-16T03:09:50.8878398Z c_stdlib:
+2026-08-16T03:09:50.8878816Z   - vs
+2026-08-16T03:09:50.8879390Z cgo_compiler:
+2026-08-16T03:09:50.8882146Z A subdirectory or file D:\Miniforge\etc\conda\activate.d already exists.
+2026-08-16T03:09:50.8882814Z   - go-cgo
+2026-08-16T03:09:50.8883554Z channel_sources:
+2026-08-16T03:09:50.8884227Z   - conda-forge
+2026-08-16T03:09:50.8884821Z target_platform:
+2026-08-16T03:09:50.8888153Z   - win-64
+2026-08-16T03:09:50.8888901Z CI:    
+2026-08-16T03:09:50.8890786Z - azure 
+2026-08-16T03:09:50.9186303Z critical libmamba Shell not initialized
+2026-08-16T03:09:50.9200266Z 
+2026-08-16T03:09:50.9201119Z 'mamba' is running as a subprocess and can't modify the parent shell.
+2026-08-16T03:09:50.9204317Z Thus you must initialize your shell before using activate and deactivate.
+2026-08-16T03:09:50.9205105Z 
+2026-08-16T03:09:50.9206790Z 
+2026-08-16T03:09:50.9223250Z To automatically initialize all future (cmd.exe) shells, run:
+2026-08-16T03:09:50.9224306Z     $ mamba shell init --shell cmd.exe --root-prefix=~/.local/share/mamba
+2026-08-16T03:09:50.9224973Z If your shell was already initialized, reinitialize your shell with:
+2026-08-16T03:09:50.9225736Z     $ mamba shell reinit --shell cmd.exe
+2026-08-16T03:09:50.9226467Z Otherwise, this may be an issue. In the meantime you can run commands. See:
+2026-08-16T03:09:50.9227067Z     $ mamba run --help
+2026-08-16T03:09:50.9227522Z 
+2026-08-16T03:09:50.9227989Z Supported shells are {bash, zsh, csh, posix, xonsh, cmd.exe, powershell, fish, nu}.
+2026-08-16T03:09:50.9234889Z 
+2026-08-16T03:09:50.9236882Z (base) D:\a\1\s>conda.exe info 
+2026-08-16T03:09:52.3832838Z 
+2026-08-16T03:09:52.3834006Z      active environment : base
+2026-08-16T03:09:52.3834783Z     active env location : D:\Miniforge
+2026-08-16T03:09:52.3835518Z             shell level : 1
+2026-08-16T03:09:52.3836102Z        user config file : C:\Users\VssAdministrator\.condarc
+2026-08-16T03:09:52.3836668Z  populated config files : D:\Miniforge\.condarc
+2026-08-16T03:09:52.3837386Z                           D:\Miniforge\condarc.d\anaconda-auth.yml
+2026-08-16T03:09:52.3837936Z                           C:\Users\VssAdministrator\.condarc
+2026-08-16T03:09:52.3838487Z           conda version : 26.7.0
+2026-08-16T03:09:52.3838973Z     conda-build version : 26.7.0
+2026-08-16T03:09:52.3839573Z          python version : 3.12.13.final.0
+2026-08-16T03:09:52.3840076Z                  solver : libmamba (default)
+2026-08-16T03:09:52.3840634Z        virtual packages : __archspec=1=x86_64_v3
+2026-08-16T03:09:52.3841148Z                           __conda=26.7.0=0
+2026-08-16T03:09:52.3841801Z                           __win=10.0.20348=0
+2026-08-16T03:09:52.3842301Z        base environment : D:\Miniforge  (writable)
+2026-08-16T03:09:52.3842828Z       conda av data dir : D:\Miniforge\etc\conda
+2026-08-16T03:09:52.3843332Z   conda av metadata url : None
+2026-08-16T03:09:52.3843858Z            channel URLs : https://conda.anaconda.org/conda-forge/win-64
+2026-08-16T03:09:52.3844444Z                           https://conda.anaconda.org/conda-forge/noarch
+2026-08-16T03:09:52.3844972Z           package cache : D:\Miniforge\pkgs
+2026-08-16T03:09:52.3845493Z                           C:\Users\VssAdministrator\.conda\pkgs
+2026-08-16T03:09:52.3846021Z                           C:\Users\VssAdministrator\AppData\Local\conda\conda\pkgs
+2026-08-16T03:09:52.3846609Z           notices cache : C:\Users\VssAdministrator\AppData\Local\conda\conda\Cache\notices
+2026-08-16T03:09:52.3847159Z        envs directories : D:\Miniforge\envs
+2026-08-16T03:09:52.3847656Z                           C:\Users\VssAdministrator\.conda\envs
+2026-08-16T03:09:52.3848276Z                           C:\Users\VssAdministrator\AppData\Local\conda\conda\envs
+2026-08-16T03:09:52.3848795Z     temporary directory : C:\Users\VSSADM~1\AppData\Local\Temp
+2026-08-16T03:09:52.3849305Z                platform : win-64
+2026-08-16T03:09:52.3849909Z              user-agent : conda/26.7.0 requests/2.34.2 CPython/3.12.13 Windows/2022Server Windows/10.0.20348 solver/libmamba conda-libmamba-solver/26.7.0 libmambapy/2.9.0
+2026-08-16T03:09:52.3850519Z           administrator : True
+2026-08-16T03:09:52.3851136Z              netrc file : None
+2026-08-16T03:09:52.3851621Z            offline mode : False
+2026-08-16T03:09:52.3851997Z 
+2026-08-16T03:09:52.4994296Z 
+2026-08-16T03:09:52.4996081Z (base) D:\a\1\s>conda.exe config --show-sources 
+2026-08-16T03:09:53.6394061Z ==> D:\Miniforge\.condarc <==
+2026-08-16T03:09:53.6395009Z aggressive_update_packages:
+2026-08-16T03:09:53.6395740Z   - ca-certificates
+2026-08-16T03:09:53.6396365Z   - certifi
+2026-08-16T03:09:53.6396925Z channel_priority: strict
+2026-08-16T03:09:53.6397421Z channels:
+2026-08-16T03:09:53.6398384Z   - conda-forge
+2026-08-16T03:09:53.6398977Z show_channel_urls: True
+2026-08-16T03:09:53.6399487Z always_yes: True
+2026-08-16T03:09:53.6399988Z solver: libmamba
+2026-08-16T03:09:53.6400485Z conda_build:
+2026-08-16T03:09:53.6400971Z   pkg_format: 2
+2026-08-16T03:09:53.6401485Z   zstd_compression_level: 19
+2026-08-16T03:09:53.6401862Z 
+2026-08-16T03:09:53.6402355Z ==> D:\Miniforge\condarc.d\anaconda-auth.yml <==
+2026-08-16T03:09:53.6402893Z channel_settings:
+2026-08-16T03:09:53.6403376Z   - channel: https://repo.anaconda.cloud/*
+2026-08-16T03:09:53.6403979Z     auth: anaconda-auth
+2026-08-16T03:09:53.6404359Z 
+2026-08-16T03:09:53.6404847Z ==> C:\Users\VssAdministrator\.condarc <==
+2026-08-16T03:09:53.6405371Z add_pip_as_python_dependency: False
+2026-08-16T03:09:53.6405884Z auto_update_conda: False
+2026-08-16T03:09:53.6406363Z channel_priority: strict
+2026-08-16T03:09:53.6406844Z channels:
+2026-08-16T03:09:53.6407294Z   - conda-forge
+2026-08-16T03:09:53.6407784Z show_channel_urls: True
+2026-08-16T03:09:53.6408304Z always_yes: True
+2026-08-16T03:09:53.6409415Z solver: libmamba
+2026-08-16T03:09:53.6409935Z conda_build:
+2026-08-16T03:09:53.6410418Z   pkg_format: 2
+2026-08-16T03:09:53.6410902Z   zstd_compression_level: 19
+2026-08-16T03:09:53.6411365Z 
+2026-08-16T03:09:53.6411851Z ==> envvars <==
+2026-08-16T03:09:53.6412444Z allow_softlinks: False
+2026-08-16T03:09:53.6412956Z bld_path: D:\bld
+2026-08-16T03:09:53.6413300Z 
+2026-08-16T03:09:53.7489254Z 
+2026-08-16T03:09:53.7491110Z (base) D:\a\1\s>conda.exe list --show-channel-urls 
+2026-08-16T03:09:56.8217251Z # packages in environment at D:\Miniforge:
+2026-08-16T03:09:56.8217930Z #
+2026-08-16T03:09:56.8218376Z # Name                        Version                Build               Channel
+2026-08-16T03:09:56.8218825Z _openmp_mutex                 4.5                    20_gnu              conda-forge
+2026-08-16T03:09:56.8219288Z _python_abi3_support          1.0                    hd8ed1ab_3          conda-forge
+2026-08-16T03:09:56.8219755Z anaconda-auth                 0.15.1                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8220271Z anaconda-cli-base             0.8.2                  pyhc364b38_0        conda-forge
+2026-08-16T03:09:56.8220769Z anaconda-client               1.14.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8221277Z annotated-doc                 0.0.5                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8221732Z annotated-types               0.8.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8222181Z anyio                         4.14.2                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8222697Z archspec                      0.2.5                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8223122Z attrs                         26.1.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8223589Z backports                     1.0                    pyhd8ed1ab_5        conda-forge
+2026-08-16T03:09:56.8224047Z backports.tarfile             1.2.0                  pyhcf101f3_2        conda-forge
+2026-08-16T03:09:56.8224505Z backports.zstd                1.6.0                  py312h06d0912_0     conda-forge
+2026-08-16T03:09:56.8224970Z beautifulsoup4                4.15.0                 pyha770c72_0        conda-forge
+2026-08-16T03:09:56.8225409Z boltons                       26.1.0                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8226111Z brotli-python                 1.2.0                  py312ha763cb9_3     conda-forge
+2026-08-16T03:09:56.8226670Z bzip2                         1.0.8                  h0ad9c76_10         conda-forge
+2026-08-16T03:09:56.8227202Z ca-certificates               2026.7.22              h4c7d964_0          conda-forge
+2026-08-16T03:09:56.8227695Z cached-property               1.5.2                  hd8ed1ab_2          conda-forge
+2026-08-16T03:09:56.8228137Z cached_property               1.5.2                  pyha770c72_2        conda-forge
+2026-08-16T03:09:56.8228574Z certifi                       2026.7.22              pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8229015Z cffi                          2.1.1                  py312he06e257_2     conda-forge
+2026-08-16T03:09:56.8229429Z chardet                       7.5.1                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8230023Z charset-normalizer            3.5.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8230506Z click                         8.4.2                  pyh6dadd2b_0        conda-forge
+2026-08-16T03:09:56.8231013Z colorama                      0.4.6                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8231440Z conda                         26.7.0                 py312h209ec74_0     conda-forge
+2026-08-16T03:09:56.8231868Z conda-build                   26.7.0                 pyhe63316d_0        conda-forge
+2026-08-16T03:09:56.8232326Z conda-env                     2.6.0                  1                   conda-forge
+2026-08-16T03:09:56.8232832Z conda-forge-ci-setup          4.26.1                 py312h3368cd0_100   conda-forge
+2026-08-16T03:09:56.8233342Z conda-forge-metadata          0.16.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8233963Z conda-forge-pinning           2026.08.15.20.40.42    hd8ed1ab_0          conda-forge
+2026-08-16T03:09:56.8234450Z conda-index                   0.12.1                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8234882Z conda-libmamba-solver         26.7.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8235353Z conda-lockfiles               0.2.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8235761Z conda-oci-mirror              0.2.3                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8236239Z conda-package-handling        2.5.0                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8236651Z conda-package-streaming       0.13.0                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8237064Z conda-pypi                    0.11.0                 py312h209ec74_1     conda-forge
+2026-08-16T03:09:56.8237482Z conda-rattler-solver          0.1.1                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8237880Z conda-self                    0.2.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8238259Z cpp-expected                  1.3.1                  h477610d_1          conda-forge
+2026-08-16T03:09:56.8238670Z cpython                       3.12.13                py312hd8ed1ab_1     conda-forge
+2026-08-16T03:09:56.8239058Z cryptography                  50.0.0                 py312h232196e_0     conda-forge
+2026-08-16T03:09:56.8239498Z decorator                     5.3.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8239899Z defusedxml                    0.7.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8240283Z deprecated                    1.3.1                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8240661Z distro                        1.9.0                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8241057Z evalidate                     2.0.5                  pyhe01879c_0        conda-forge
+2026-08-16T03:09:56.8241454Z exceptiongroup                1.3.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8241861Z filelock                      3.32.3                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8242397Z fmt                           12.1.0                 h1ced75a_1          conda-forge
+2026-08-16T03:09:56.8242789Z frozendict                    2.4.7                  pyh851646a_2        conda-forge
+2026-08-16T03:09:56.8243187Z h11                           0.16.0                 pyhcf101f3_1        conda-forge
+2026-08-16T03:09:56.8243549Z h2                            4.4.1                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8243938Z hpack                         4.2.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8244316Z httpcore                      1.0.9                  pyh29332c3_0        conda-forge
+2026-08-16T03:09:56.8244684Z httpx                         0.28.1                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8245057Z hyperframe                    6.1.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8245473Z icu                           78.3                   h5112557_2          conda-forge
+2026-08-16T03:09:56.8245852Z idna                          3.18                   pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8246240Z importlib-metadata            9.0.0                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8246633Z importlib_resources           7.1.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8247018Z jaraco.classes                3.4.0                  pyhcf101f3_3        conda-forge
+2026-08-16T03:09:56.8247434Z jaraco.context                6.1.2                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8247831Z jaraco.functools              4.6.0                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8248268Z jinja2                        3.1.6                  pyhcf101f3_1        conda-forge
+2026-08-16T03:09:56.8248670Z joblib                        1.5.3                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8249087Z jsonpatch                     1.33                   pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8249465Z jsonpointer                   3.1.1                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8249845Z jsonschema                    4.26.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8250235Z jsonschema-specifications     2025.9.1               pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8250630Z jupyter_core                  5.9.1                  pyh6dadd2b_0        conda-forge
+2026-08-16T03:09:56.8251041Z keyring                       25.7.0                 pyh7428d3b_0        conda-forge
+2026-08-16T03:09:56.8251429Z krb5                          1.22.2                 h719d79b_2          conda-forge
+2026-08-16T03:09:56.8251806Z lcms2                         2.19.1                 hf2c6c5f_1          conda-forge
+2026-08-16T03:09:56.8330280Z lerc                          4.2.0                  hd936e49_0          conda-forge
+2026-08-16T03:09:56.8330662Z libarchive                    3.8.9                  gpl_he24518a_100    conda-forge
+2026-08-16T03:09:56.8331004Z libcurl                       8.21.0                 hdb0ef4a_4          conda-forge
+2026-08-16T03:09:56.8331327Z libdeflate                    1.25                   h1a1d4e4_1          conda-forge
+2026-08-16T03:09:56.8331641Z libexpat                      2.8.1                  hac47afa_1          conda-forge
+2026-08-16T03:09:56.8331969Z libffi                        3.7.0                  h3d046cb_0          conda-forge
+2026-08-16T03:09:56.8332281Z libfreetype                   2.14.3                 h57928b3_2          conda-forge
+2026-08-16T03:09:56.8332715Z libfreetype6                  2.14.3                 hdbac1cb_2          conda-forge
+2026-08-16T03:09:56.8333035Z libgcc                        16.1.0                 h110b43a_1          conda-forge
+2026-08-16T03:09:56.8333350Z libgomp                       16.1.0                 h8ee18e1_1          conda-forge
+2026-08-16T03:09:56.8333821Z libiconv                      1.18                   hc1393d2_2          conda-forge
+2026-08-16T03:09:56.8334141Z libjpeg-turbo                 3.2.0                  hfd05255_1          conda-forge
+2026-08-16T03:09:56.8334454Z liblief                       0.17.6                 hac47afa_0          conda-forge
+2026-08-16T03:09:56.8334765Z liblzma                       5.8.3                  hfd05255_1          conda-forge
+2026-08-16T03:09:56.8335070Z libmamba                      2.9.0                  py314h08176f6_0     conda-forge
+2026-08-16T03:09:56.8335386Z libmamba-spdlog               2.9.0                  h9ac7702_0          conda-forge
+2026-08-16T03:09:56.8335709Z libmambapy                    2.9.0                  py312h2a788e3_0     conda-forge
+2026-08-16T03:09:56.8336029Z libmsgpack-c                  6.1.0                  h5112557_7          conda-forge
+2026-08-16T03:09:56.8336330Z libpng                        1.6.58                 hdc8cecf_1          conda-forge
+2026-08-16T03:09:56.8336638Z libpsl                        0.23.1                 h9b16d47_0          conda-forge
+2026-08-16T03:09:56.8336942Z libsodium                     1.0.22                 h6a83c73_1          conda-forge
+2026-08-16T03:09:56.8337239Z libsolv                       0.7.39                 h8883371_0          conda-forge
+2026-08-16T03:09:56.8337547Z libsqlite                     3.53.4                 hf5d6505_0          conda-forge
+2026-08-16T03:09:56.8337870Z libssh2                       1.11.1                 h734d217_1          conda-forge
+2026-08-16T03:09:56.8338204Z libtiff                       4.7.2                  h8f73337_0          conda-forge
+2026-08-16T03:09:56.8338522Z libwebp-base                  1.6.0                  h4d5522a_1          conda-forge
+2026-08-16T03:09:56.8338934Z libwinpthread                 12.0.0.r4.gg4f2fc60ca  h57928b3_10         conda-forge
+2026-08-16T03:09:56.8339348Z libxcb                        1.17.0                 h0e4246c_0          conda-forge
+2026-08-16T03:09:56.8339672Z libxml2                       2.15.3                 h8ef44ab_0          conda-forge
+2026-08-16T03:09:56.8339993Z libxml2-16                    2.15.3                 h3cfd58e_0          conda-forge
+2026-08-16T03:09:56.8340296Z libzlib                       1.3.2                  hfd05255_3          conda-forge
+2026-08-16T03:09:56.8340605Z lz4-c                         1.10.0                 h6a83c73_2          conda-forge
+2026-08-16T03:09:56.8340909Z lzo                           2.10                   h6a83c73_1002       conda-forge
+2026-08-16T03:09:56.8341217Z m2-bash                       5.2.037.2              hc364b38_6          conda-forge
+2026-08-16T03:09:56.8341531Z m2-brotli                     1.1.0.2                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8341857Z m2-ca-certificates            20241223.1             hc364b38_6          conda-forge
+2026-08-16T03:09:56.8342201Z m2-conda-epoch                20250515               0_x86_64            conda-forge
+2026-08-16T03:09:56.8342535Z m2-coreutils                  8.32.5                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8342863Z m2-curl                       8.9.1.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8343177Z m2-db                         6.2.32.5               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8343476Z m2-file                       5.46.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8343804Z m2-filesystem                 2025.02.23.1           hc364b38_10         conda-forge
+2026-08-16T03:09:56.8344128Z m2-findutils                  4.9.0.3                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8344442Z m2-gcc-libs                   13.3.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8344763Z m2-gdbm                       1.25.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8345085Z m2-git                        2.49.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8345492Z m2-gmp                        6.3.0.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8345937Z m2-gzip                       1.14.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8346262Z m2-heimdal                    7.8.0.5                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8346585Z m2-heimdal-libs               7.8.0.5                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8346900Z m2-info                       7.2.1                  hc364b38_6          conda-forge
+2026-08-16T03:09:56.8347199Z m2-less                       668.1                  hc364b38_6          conda-forge
+2026-08-16T03:09:56.8347500Z m2-libbz2                     1.0.8.4                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8347818Z m2-libcbor                    0.12.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8348133Z m2-libcurl                    8.9.1.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8348460Z m2-libdb                      6.2.32.5               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8348780Z m2-libedit                    20240808_3.1.1         hc364b38_6          conda-forge
+2026-08-16T03:09:56.8349095Z m2-libexpat                   2.7.1.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8349421Z m2-libffi                     3.4.8.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8349738Z m2-libfido2                   1.16.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8350052Z m2-libgdbm                    1.25.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8350364Z m2-libiconv                   1.18.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8350751Z m2-libidn2                    2.3.8.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8351068Z m2-libintl                    0.22.5.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8351391Z m2-liblzma                    5.8.1.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8351706Z m2-libnghttp2                 1.65.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8352031Z m2-libopenssl                 3.5.0.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8352347Z m2-libp11-kit                 0.25.5.2               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8352720Z m2-libpcre2_8                 10.45.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8353255Z m2-libpsl                     0.21.5.2               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8353574Z m2-libreadline                8.2.013.1              hc364b38_6          conda-forge
+2026-08-16T03:09:56.8353896Z m2-libsqlite                  3.49.1.2               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8354214Z m2-libssh2                    1.11.1.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8354534Z m2-libtasn1                   4.20.0.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8354845Z m2-libunistring               1.3.1                  hc364b38_6          conda-forge
+2026-08-16T03:09:56.8355159Z m2-libxcrypt                  4.4.38.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8355470Z m2-libzstd                    1.5.7.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8355781Z m2-msys2-runtime              3.6.1.4                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8356092Z m2-nano                       8.4.1                  hc364b38_6          conda-forge
+2026-08-16T03:09:56.8356414Z m2-ncurses                    6.5.20240831.2         hc364b38_6          conda-forge
+2026-08-16T03:09:56.8356736Z m2-openssh                    9.9p2.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8357062Z m2-openssl                    3.5.0.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8357464Z m2-p11-kit                    0.25.5.2               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8357777Z m2-patch                      2.7.6.3                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8358084Z m2-perl                       5.38.4.2               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8358408Z m2-perl-authen-sasl           2.1800.1               hc364b38_6          conda-forge
+2026-08-16T03:09:56.8358739Z m2-perl-clone                 0.47.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8359064Z m2-perl-convert-binhex        1.125.2                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8359441Z m2-perl-encode-locale         1.05.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8359768Z m2-perl-error                 0.17030.1              hc364b38_6          conda-forge
+2026-08-16T03:09:56.8360190Z m2-perl-file-listing          6.16.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8360525Z m2-perl-html-parser           3.83.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8360853Z m2-perl-html-tagset           3.24.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8361188Z m2-perl-http-cookiejar        0.014.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8361519Z m2-perl-http-cookies          6.11.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8361861Z m2-perl-http-daemon           6.16.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8362188Z m2-perl-http-date             6.06.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8362586Z m2-perl-http-message          7.00.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8362937Z m2-perl-http-negotiate        6.01.3                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8363286Z m2-perl-io-html               1.004.2                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8363616Z m2-perl-io-socket-ip          0.41.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8363951Z m2-perl-io-socket-ssl         2.089.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8364286Z m2-perl-io-stringy            2.113.2                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8364621Z m2-perl-libwww                6.78.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8364952Z m2-perl-lwp-mediatypes        6.04.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8365258Z m2-perl-mailtools             2.22.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8365575Z m2-perl-mime-tools            5.515.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8365882Z m2-perl-net-http              6.23.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8366269Z m2-perl-net-smtp-ssl          1.04.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8366597Z m2-perl-net-ssleay            1.94.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8366930Z m2-perl-termreadkey           2.38.6                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8367263Z m2-perl-timedate              2.33.2                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8367585Z m2-perl-try-tiny              0.32.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8367905Z m2-perl-uri                   5.31.1                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8368232Z m2-perl-www-robotrules        6.02.3                 hc364b38_6          conda-forge
+2026-08-16T03:09:56.8368561Z m2-sed                        4.9.1                  hc364b38_6          conda-forge
+2026-08-16T03:09:56.8368872Z m2-zlib                       1.3.1.1                hc364b38_6          conda-forge
+2026-08-16T03:09:56.8369282Z mamba                         2.9.0                  heafb4a2_0          conda-forge
+2026-08-16T03:09:56.8369593Z markdown-it-py                4.2.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8369924Z markupsafe                    3.0.3                  py312h05f76fc_1     conda-forge
+2026-08-16T03:09:56.8370251Z mbedtls                       3.6.3.1                he0c23c2_0          conda-forge
+2026-08-16T03:09:56.8370569Z mdurl                         0.1.2                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8370891Z menuinst                      2.5.2                  py312ha1a9051_1     conda-forge
+2026-08-16T03:09:56.8371205Z more-itertools                11.1.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8371544Z msgpack-python                1.2.1                  py312h78d62e6_1     conda-forge
+2026-08-16T03:09:56.8371862Z nbformat                      5.11.0                 pyhcf101f3_1        conda-forge
+2026-08-16T03:09:56.8372194Z networkx                      2.4                    py_1                conda-forge
+2026-08-16T03:09:56.8372510Z nlohmann_json-abi             3.12.0                 h0f90c79_2          conda-forge
+2026-08-16T03:09:56.8372882Z openjpeg                      2.5.4                  h0e57b4f_0          conda-forge
+2026-08-16T03:09:56.8373209Z openssl                       3.6.3                  hf411b9b_1          conda-forge
+2026-08-16T03:09:56.8373527Z oras-py                       0.1.14                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8373834Z packaging                     26.3                   pyhc364b38_0        conda-forge
+2026-08-16T03:09:56.8374144Z pillow                        12.3.0                 py312h31f0997_0     conda-forge
+2026-08-16T03:09:56.8374520Z pip                           26.2.1                 pyh8b19718_0        conda-forge
+2026-08-16T03:09:56.8374841Z pkce                          1.0.3                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8375171Z pkginfo                       1.12.1.2               pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8375487Z platformdirs                  4.11.3                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8375796Z pluggy                        1.6.0                  pyhf9edf01_1        conda-forge
+2026-08-16T03:09:56.8376098Z psutil                        7.2.2                  py312he5662c2_0     conda-forge
+2026-08-16T03:09:56.8376451Z pthread-stubs                 0.4                    hba3369d_1003       conda-forge
+2026-08-16T03:09:56.8376778Z py-lief                       0.17.6                 py312hbb81ca0_0     conda-forge
+2026-08-16T03:09:56.8377099Z py-rattler                    0.25.0                 py310hb39080a_2     conda-forge
+2026-08-16T03:09:56.8377431Z py-rattler-build              0.72.2                 py310hdba2031_0     conda-forge
+2026-08-16T03:09:56.8377767Z pybind11-abi                  11                     hc364b38_1          conda-forge
+2026-08-16T03:09:56.8378080Z pycosat                       0.6.6                  py312he06e257_4     conda-forge
+2026-08-16T03:09:56.8378392Z pycparser                     3.0                    pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8378698Z pydantic                      2.13.4                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8379010Z pydantic-core                 2.46.4                 py312hdabe01f_0     conda-forge
+2026-08-16T03:09:56.8379374Z pydantic-settings             2.15.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8379693Z pygithub                      2.9.1                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8380007Z pygments                      2.20.0                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8380323Z pyjwt                         2.13.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8380639Z pynacl                        1.6.2                  py312h297b7f0_3     conda-forge
+2026-08-16T03:09:56.8381049Z pyproject_hooks               1.2.0                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8381367Z pysocks                       1.7.1                  pyh09c184e_7        conda-forge
+2026-08-16T03:09:56.8381680Z python                        3.12.13                hb12b558_1_cpython  conda-forge
+2026-08-16T03:09:56.8382009Z python-build                  1.5.0                  pyhc364b38_0        conda-forge
+2026-08-16T03:09:56.8382340Z python-dateutil               2.9.0.post0            pyhe01879c_2        conda-forge
+2026-08-16T03:09:56.8382672Z python-dotenv                 1.2.2                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8382995Z python-fastjsonschema         2.22.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8427233Z python-gil                    3.12.13                hd8ed1ab_1          conda-forge
+2026-08-16T03:09:56.8427931Z python-installer              1.0.1                  pyh332efcf_0        conda-forge
+2026-08-16T03:09:56.8428567Z python-libarchive-c           5.3                    pyhe01879c_1        conda-forge
+2026-08-16T03:09:56.8429081Z python_abi                    3.12                   8_cp312             conda-forge
+2026-08-16T03:09:56.8429616Z pytz                          2026.3.post1           pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8430127Z pywin32                       312                    py312h829343e_0     conda-forge
+2026-08-16T03:09:56.8430635Z pywin32-ctypes                0.2.3                  py312h2e8e312_3     conda-forge
+2026-08-16T03:09:56.8431282Z pyyaml                        6.0.3                  py312h05f76fc_1     conda-forge
+2026-08-16T03:09:56.8431912Z rattler-build                 0.73.0                 he94b42d_0          conda-forge
+2026-08-16T03:09:56.8432473Z rattler-build-conda-compat    1.4.19                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8432985Z readchar                      4.2.2                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8433498Z referencing                   0.37.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8434000Z reproc                        14.2.7.post0           h5112557_2          conda-forge
+2026-08-16T03:09:56.8434523Z reproc-cpp                    14.2.7.post0           h03e4b45_2          conda-forge
+2026-08-16T03:09:56.8435025Z requests                      2.34.2                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8435559Z requests-toolbelt             1.0.0                  pyhd8ed1ab_1        conda-forge
+2026-08-16T03:09:56.8436134Z rich                          15.0.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8436655Z ripgrep                       15.2.0                 h77a83cd_0          conda-forge
+2026-08-16T03:09:56.8437291Z rpds-py                       2026.6.3               py312hd944d65_0     conda-forge
+2026-08-16T03:09:56.8437809Z ruamel.yaml                   0.18.17                py312he5662c2_2     conda-forge
+2026-08-16T03:09:56.8438367Z ruamel.yaml.clib              0.2.15                 py312he5662c2_1     conda-forge
+2026-08-16T03:09:56.8438901Z semver                        3.0.4                  pyhcf101f3_1        conda-forge
+2026-08-16T03:09:56.8439439Z setuptools                    84.0.0                 pyh332efcf_0        conda-forge
+2026-08-16T03:09:56.8439993Z shellingham                   1.5.4                  pyhd8ed1ab_2        conda-forge
+2026-08-16T03:09:56.8440527Z shyaml                        0.6.2                  pyhd3deb0d_0        conda-forge
+2026-08-16T03:09:56.8441042Z simdjson                      4.6.7                  h477610d_0          conda-forge
+2026-08-16T03:09:56.8441576Z six                           1.17.0                 pyhe01879c_1        conda-forge
+2026-08-16T03:09:56.8442187Z sniffio                       1.3.1                  pyhd8ed1ab_2        conda-forge
+2026-08-16T03:09:56.8442701Z soupsieve                     2.9.2                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8443502Z spdlog                        1.17.0                 hd227c35_2          conda-forge
+2026-08-16T03:09:56.8444032Z tk                            8.6.13                 h967ab96_3          conda-forge
+2026-08-16T03:09:56.8444488Z tomli                         2.4.1                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8444950Z tomli-w                       1.2.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8445416Z tomlkit                       0.15.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8445858Z tqdm                          4.70.0                 pyha7b4d00_0        conda-forge
+2026-08-16T03:09:56.8446339Z traitlets                     5.16.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8446833Z truststore                    0.10.4                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8447307Z typer                         0.27.1                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8447790Z typing-extensions             4.16.0                 h69aa097_0          conda-forge
+2026-08-16T03:09:56.8448256Z typing-inspection             0.4.4                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8448729Z typing_extensions             4.16.0                 pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8449187Z tzdata                        2026c                  h151e31d_0          conda-forge
+2026-08-16T03:09:56.8449648Z ucrt                          10.0.26100.0           h57928b3_0          conda-forge
+2026-08-16T03:09:56.8450094Z unearth                       0.18.3                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8450653Z urllib3                       2.7.0                  pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8451106Z vc                            14.5                   ha367084_41         conda-forge
+2026-08-16T03:09:56.8451565Z vc14_runtime                  14.51.36247            habf1de7_41         conda-forge
+2026-08-16T03:09:56.8452097Z vcomp14                       14.51.36247            habf1de7_41         conda-forge
+2026-08-16T03:09:56.8452710Z wheel                         0.48.0                 pyhd8ed1ab_0        conda-forge
+2026-08-16T03:09:56.8453187Z win_inet_pton                 1.1.0                  pyh7428d3b_8        conda-forge
+2026-08-16T03:09:56.8453654Z wrapt                         2.3.0                  py312he06e257_0     conda-forge
+2026-08-16T03:09:56.8454132Z xorg-libxau                   1.0.12                 hba3369d_2          conda-forge
+2026-08-16T03:09:56.8454622Z xorg-libxdmcp                 1.1.5                  hba3369d_2          conda-forge
+2026-08-16T03:09:56.8455075Z yaml                          0.2.5                  h6a83c73_3          conda-forge
+2026-08-16T03:09:56.8455539Z yaml-cpp                      0.8.0                  h5112557_1          conda-forge
+2026-08-16T03:09:56.8456017Z zipp                          4.1.0                  pyhcf101f3_0        conda-forge
+2026-08-16T03:09:56.8456471Z zlib-ng                       2.3.3                  h0261ad2_1          conda-forge
+2026-08-16T03:09:56.8456946Z zstandard                     0.25.0                 py312he5662c2_1     conda-forge
+2026-08-16T03:09:56.8457402Z zstd                          1.5.7                  h534d264_7          conda-forge
+2026-08-16T03:09:56.9804623Z Force fetch origin/main
+2026-08-16T03:09:58.5838154Z From ***
+2026-08-16T03:09:58.5839152Z  * [new branch]            main       -> main
+2026-08-16T03:09:58.6626545Z Removing recipes also present in main
+2026-08-16T03:09:58.7977567Z Removing recipe: example-v0-deprecated
+2026-08-16T03:09:58.7982233Z Removing recipe: example-v1
+2026-08-16T03:09:58.8005100Z Index D:\bld
+2026-08-16T03:10:00.4752339Z 2026-08-16T03:10:00 Subdir: noarch Gathering repodata
+2026-08-16T03:10:00.4778466Z 2026-08-16T03:10:00 noarch Writing pre-patch repodata
+2026-08-16T03:10:00.4801778Z 2026-08-16T03:10:00 noarch Applying patch instructions
+2026-08-16T03:10:00.4833937Z 2026-08-16T03:10:00 noarch Writing patched repodata
+2026-08-16T03:10:00.4856177Z 2026-08-16T03:10:00 noarch Writing index HTML
+2026-08-16T03:10:00.4934383Z 2026-08-16T03:10:00 Subdir: win-64 Gathering repodata
+2026-08-16T03:10:00.4956729Z 2026-08-16T03:10:00 win-64 Writing pre-patch repodata
+2026-08-16T03:10:00.4968821Z 2026-08-16T03:10:00 win-64 Applying patch instructions
+2026-08-16T03:10:00.4970254Z 2026-08-16T03:10:00 win-64 Writing patched repodata
+2026-08-16T03:10:00.4971150Z 2026-08-16T03:10:00 win-64 Writing index HTML
+2026-08-16T03:10:00.5178368Z 2026-08-16T03:10:00 Subdir: win-arm64 Gathering repodata
+2026-08-16T03:10:00.5180241Z 2026-08-16T03:10:00 win-arm64 Writing pre-patch repodata
+2026-08-16T03:10:00.5193244Z 2026-08-16T03:10:00 win-arm64 Applying patch instructions
+2026-08-16T03:10:00.5194378Z 2026-08-16T03:10:00 win-arm64 Writing patched repodata
+2026-08-16T03:10:00.5195127Z 2026-08-16T03:10:00 win-arm64 Writing index HTML
+2026-08-16T03:10:00.7512491Z ##[endgroup]
+2026-08-16T03:10:00.7518181Z Building all recipes
+2026-08-16T03:10:01.3949475Z Building pybleton with D:\bld,conda-forge
+2026-08-16T03:10:02.0705704Z 2026-08-16T03:10:02 Subdir: noarch Gathering repodata
+2026-08-16T03:10:02.0718865Z 2026-08-16T03:10:02 noarch Writing pre-patch repodata
+2026-08-16T03:10:02.0731042Z 2026-08-16T03:10:02 noarch Applying patch instructions
+2026-08-16T03:10:02.0732654Z 2026-08-16T03:10:02 noarch Writing patched repodata
+2026-08-16T03:10:02.0743119Z 2026-08-16T03:10:02 noarch Building current_repodata subset
+2026-08-16T03:10:02.6941846Z 2026-08-16T03:10:02 noarch Writing index HTML
+2026-08-16T03:11:37.8555149Z WARNING: Setting build arch. This is only useful when pretending to be on another arch, such as for rendering necessary dependencies on a non-native arch. I trust that you know what you're doing.
+2026-08-16T03:11:37.8556878Z D:\a\1\s\recipes\pybleton {'platform': 'win', 'arch': '64', 'label': 'win-64'} <conda_build.config.Config object at 0x000002E245AE9B80> False
+2026-08-16T03:11:37.8557675Z rendering D:\a\1\s\recipes\pybleton for win-64
+2026-08-16T03:11:37.8628589Z WARNING: Setting build platform. This is only useful when pretending to be on another platform, such as for rendering necessary dependencies on a non-native platform. I trust that you know what you're doing.
+2026-08-16T03:11:38.6505915Z WARNING: Number of parsed outputs does not match detected raw metadata blocks. Identified output block may be wrong! If you are using Jinja conditionals to include or exclude outputs, consider using `skip: true  # [condition]` instead.
+2026-08-16T03:11:41.1957470Z WARNING:D:\a\1\s\.ci_support\compute_build_graph.py:Dependency python-osc, version >=1.8.3 is not installable from your channels: ['D:\\bld', 'conda-forge'] with subdir win-64.  Seeing if we can build it...
+2026-08-16T03:11:41.6950103Z INFO:D:\a\1\s\.ci_support\compute_build_graph.py:node: pybleton-0.1.0-on-win-64
+2026-08-16T03:11:41.6951381Z INFO:D:\a\1\s\.ci_support\compute_build_graph.py:   build: []
+2026-08-16T03:11:41.6953908Z INFO:D:\a\1\s\.ci_support\compute_build_graph.py:   host: [MatchSpec("python==3.10"), MatchSpec("hatchling"), MatchSpec("pip")]
+2026-08-16T03:11:41.6956489Z INFO:D:\a\1\s\.ci_support\compute_build_graph.py:   run: [MatchSpec("python[version='>=3.10']"), MatchSpec("pydantic[version='>=2.0.0']"), MatchSpec("python-osc[version='>=1.8.3']")]
+2026-08-16T03:11:41.6957321Z INFO:D:\a\1\s\.ci_support\compute_build_graph.py:   test: ['pip', 'python 3.10']
+2026-08-16T03:11:41.8241008Z Computed that there are 1 distributions to build from 1 recipes
+2026-08-16T03:11:41.8242114Z Resolved dependencies, will be built in the following order:
+2026-08-16T03:11:41.8242711Z     pybleton-0.1.0-on-win-64
+2026-08-16T03:11:41.8876092Z Adding in variants from internal_defaults
+2026-08-16T03:11:41.8876835Z Adding in variants from D:\Miniforge\conda_build_config.yaml
+2026-08-16T03:11:41.8878556Z Adding in variants from D:\a\1\s\.ci_support\win64.yaml
+2026-08-16T03:11:43.3455854Z Attempting to finalize metadata for pybleton
+2026-08-16T03:11:48.2115014Z Reloading output folder: ...working... done
+2026-08-16T03:11:48.5754816Z Getting pinned dependencies: ...working... done
+2026-08-16T03:11:58.0946832Z Reloading output folder: ...working... done
+2026-08-16T03:11:58.4187236Z Getting pinned dependencies: ...working... done
+2026-08-16T03:11:58.4661261Z BUILD START: ['pybleton-0.1.0-pyhd8ed1ab_0.conda']
+2026-08-16T03:12:00.3206402Z Reloading output folder: ...working... done
+2026-08-16T03:12:00.6063563Z Solving environment (_h_env): ...working... done
+2026-08-16T03:12:00.6303137Z 
+2026-08-16T03:12:00.6304319Z ## Package Plan ##
+2026-08-16T03:12:00.6304782Z 
+2026-08-16T03:12:00.6305354Z   environment location: D:\bld\pybleton_1786849902162\_h_env
+2026-08-16T03:12:00.6305777Z 
+2026-08-16T03:12:00.6306699Z 
+2026-08-16T03:12:00.6307245Z The following NEW packages will be INSTALLED:
+2026-08-16T03:12:00.6307726Z 
+2026-08-16T03:12:00.6308279Z     bzip2:             1.0.8-h0ad9c76_10          conda-forge
+2026-08-16T03:12:00.6308872Z     ca-certificates:   2026.7.22-h4c7d964_0       conda-forge
+2026-08-16T03:12:00.6309482Z     editables:         0.6-pyhcf101f3_0           conda-forge
+2026-08-16T03:12:00.6310048Z     hatchling:         1.32.0-pyhcf101f3_0        conda-forge
+2026-08-16T03:12:00.6310581Z     libexpat:          2.8.1-hac47afa_1           conda-forge
+2026-08-16T03:12:00.6311097Z     libffi:            3.7.0-h3d046cb_0           conda-forge
+2026-08-16T03:12:00.6311690Z     liblzma:           5.8.3-hfd05255_1           conda-forge
+2026-08-16T03:12:00.6312289Z     libsqlite:         3.53.4-hf5d6505_0          conda-forge
+2026-08-16T03:12:00.6312981Z     libzlib:           1.3.2-hfd05255_3           conda-forge
+2026-08-16T03:12:00.6313504Z     openssl:           3.6.3-hf411b9b_1           conda-forge
+2026-08-16T03:12:00.6314025Z     packaging:         26.3-pyhc364b38_0          conda-forge
+2026-08-16T03:12:00.6314554Z     pathspec:          1.1.1-pyhd8ed1ab_0         conda-forge
+2026-08-16T03:12:00.6315151Z     pip:               26.2.1-pyh8b19718_0        conda-forge
+2026-08-16T03:12:00.6315639Z     pluggy:            1.6.0-pyhf9edf01_1         conda-forge
+2026-08-16T03:12:00.6316176Z     python:            3.10.20-hc20f281_1_cpython conda-forge
+2026-08-16T03:12:00.6316723Z     setuptools:        84.0.0-pyh332efcf_0        conda-forge
+2026-08-16T03:12:00.6317242Z     tk:                8.6.13-h967ab96_3          conda-forge
+2026-08-16T03:12:00.6317752Z     tomli:             2.4.1-pyhcf101f3_0         conda-forge
+2026-08-16T03:12:00.6318303Z     tomlkit:           0.15.1-pyhcf101f3_0        conda-forge
+2026-08-16T03:12:00.6318870Z     trove-classifiers: 2026.6.1.19-pyhcf101f3_0   conda-forge
+2026-08-16T03:12:00.6319384Z     tzdata:            2026c-h151e31d_0           conda-forge
+2026-08-16T03:12:00.6319875Z     ucrt:              10.0.26100.0-h57928b3_0    conda-forge
+2026-08-16T03:12:00.6320357Z     vc:                14.5-ha367084_41           conda-forge
+2026-08-16T03:12:00.6320837Z     vc14_runtime:      14.51.36247-habf1de7_41    conda-forge
+2026-08-16T03:12:00.6321335Z     vcomp14:           14.51.36247-habf1de7_41    conda-forge
+2026-08-16T03:12:00.6321825Z     wheel:             0.48.0-pyhd8ed1ab_0        conda-forge
+2026-08-16T03:12:00.6322155Z 
+2026-08-16T03:12:02.1057352Z Preparing transaction: ...working... done
+2026-08-16T03:12:03.1758271Z Verifying transaction: ...working... done
+2026-08-16T03:12:06.9915192Z Executing transaction: ...working... done
+2026-08-16T03:12:08.9174356Z Reloading output folder: ...working... done
+2026-08-16T03:12:09.2338638Z Solving environment (_test_env): ...working... failed
+2026-08-16T03:12:09.2412259Z WARNING: failed to get package records, retrying.  exception was: Unsatisfiable dependencies for platform win-64: {MatchSpec("python-osc[version='>=1.8.3']")}
+2026-08-16T03:12:09.2413019Z Encountered problems while solving:
+2026-08-16T03:12:09.2414850Z   - unsupported request
+2026-08-16T03:12:09.2415407Z 
+2026-08-16T03:12:09.2416008Z Could not solve for environment specs
+2026-08-16T03:12:09.2416556Z The following package could not be installed
+2026-08-16T03:12:09.2417033Z \u2514\u2500 python-osc >=1.8.3 * does not exist (perhaps a typo or a missing channel).
+2026-08-16T03:12:12.9980059Z Reloading output folder: ...working... done
+2026-08-16T03:12:13.2947136Z Solving environment (_test_env): ...working... failed
+2026-08-16T03:12:15.1921652Z Reloading output folder: ...working... done
+2026-08-16T03:12:15.4845065Z Solving environment (_test_env): ...working... failed
+2026-08-16T03:12:17.3259773Z Reloading output folder: ...working... done
+2026-08-16T03:12:17.6251716Z Solving environment (_test_env): ...working... failed
+2026-08-16T03:12:17.6323663Z ERROR: Failed to get package records, max retries exceeded.
+2026-08-16T03:12:17.9054379Z 
+2026-08-16T03:12:17.9055408Z Leaving build/test directories:
+2026-08-16T03:12:17.9056033Z   Work:
+2026-08-16T03:12:17.9056653Z  D:\bld\work 
+2026-08-16T03:12:17.9057177Z   Test:
+2026-08-16T03:12:17.9057715Z  D:\bld\test_tmp 
+2026-08-16T03:12:17.9058252Z Leaving build/test environments:
+2026-08-16T03:12:17.9058818Z   Test:
+2026-08-16T03:12:17.9059387Z source activate  D:\bld\_test_env 
+2026-08-16T03:12:17.9059906Z   Build:
+2026-08-16T03:12:17.9060422Z source activate  D:\bld\_build_env 
+2026-08-16T03:12:17.9060797Z 
+2026-08-16T03:12:17.9061153Z 
+2026-08-16T03:12:17.9084117Z Traceback (most recent call last):
+2026-08-16T03:12:17.9084839Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 896, in get_install_actions
+2026-08-16T03:12:17.9088211Z     _actions = _install_actions(prefix, index, specs, subdir=subdir)
+2026-08-16T03:12:17.9092524Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9093229Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 1421, in install_actions
+2026-08-16T03:12:17.9097221Z     txn = solver.solve_for_transaction(prune=False, ignore_pinned=False)
+2026-08-16T03:12:17.9101566Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9102236Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 164, in solve_for_transaction
+2026-08-16T03:12:17.9104065Z     unlink_precs, link_precs = self.solve_for_diff(
+2026-08-16T03:12:17.9106461Z                                ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9107295Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 233, in solve_for_diff
+2026-08-16T03:12:17.9109198Z     final_precs = self.solve_final_state(
+2026-08-16T03:12:17.9110956Z                   ^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9111617Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 184, in solve_final_state
+2026-08-16T03:12:17.9113597Z     out_state = self._solving_loop(in_state, out_state, index)
+2026-08-16T03:12:17.9117176Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9117907Z   File "D:\Miniforge\Lib\site-packages\conda\common\io.py", line 110, in decorated
+2026-08-16T03:12:17.9119555Z     return f(*args, **kwds)
+2026-08-16T03:12:17.9121281Z            ^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9121950Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 312, in _solving_loop
+2026-08-16T03:12:17.9124159Z     solved, outcome = self._solve_attempt(in_state, out_state, index, attempt=attempt)
+2026-08-16T03:12:17.9128929Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9129612Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 369, in _solve_attempt
+2026-08-16T03:12:17.9131931Z     new_conflicts = self._maybe_raise_for_problems(outcome, index, out_state, old_conflicts)
+2026-08-16T03:12:17.9137030Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9137708Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 797, in _maybe_raise_for_problems
+2026-08-16T03:12:17.9140973Z     self._maybe_raise_for_conda_build(
+2026-08-16T03:12:17.9141697Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 887, in _maybe_raise_for_conda_build
+2026-08-16T03:12:17.9144836Z     raise exc
+2026-08-16T03:12:17.9146533Z conda_libmamba_solver.conda_build_exceptions.ExplainedDependencyNeedsBuildingError: Unsatisfiable dependencies for platform win-64: {MatchSpec("python-osc[version='>=1.8.3']")}
+2026-08-16T03:12:17.9147287Z Encountered problems while solving:
+2026-08-16T03:12:17.9147923Z   - unsupported request
+2026-08-16T03:12:17.9148268Z 
+2026-08-16T03:12:17.9148819Z Could not solve for environment specs
+2026-08-16T03:12:17.9149619Z The following package could not be installed
+2026-08-16T03:12:17.9150255Z \u2514\u2500 python-osc >=1.8.3 * does not exist (perhaps a typo or a missing channel).
+2026-08-16T03:12:17.9150759Z 
+2026-08-16T03:12:17.9151399Z During handling of the above exception, another exception occurred:
+2026-08-16T03:12:17.9151861Z 
+2026-08-16T03:12:17.9152397Z Traceback (most recent call last):
+2026-08-16T03:12:17.9153013Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 896, in get_install_actions
+2026-08-16T03:12:17.9153930Z     _actions = _install_actions(prefix, index, specs, subdir=subdir)
+2026-08-16T03:12:17.9154547Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9155173Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 1421, in install_actions
+2026-08-16T03:12:17.9158348Z     txn = solver.solve_for_transaction(prune=False, ignore_pinned=False)
+2026-08-16T03:12:17.9163006Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9163696Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 164, in solve_for_transaction
+2026-08-16T03:12:17.9165195Z     unlink_precs, link_precs = self.solve_for_diff(
+2026-08-16T03:12:17.9168983Z                                ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9169744Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 233, in solve_for_diff
+2026-08-16T03:12:17.9171771Z     final_precs = self.solve_final_state(
+2026-08-16T03:12:17.9173548Z                   ^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9174270Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 184, in solve_final_state
+2026-08-16T03:12:17.9176238Z     out_state = self._solving_loop(in_state, out_state, index)
+2026-08-16T03:12:17.9179535Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9180161Z   File "D:\Miniforge\Lib\site-packages\conda\common\io.py", line 110, in decorated
+2026-08-16T03:12:17.9181658Z     return f(*args, **kwds)
+2026-08-16T03:12:17.9184434Z            ^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9185116Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 312, in _solving_loop
+2026-08-16T03:12:17.9187340Z     solved, outcome = self._solve_attempt(in_state, out_state, index, attempt=attempt)
+2026-08-16T03:12:17.9192930Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9193592Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 369, in _solve_attempt
+2026-08-16T03:12:17.9195700Z     new_conflicts = self._maybe_raise_for_problems(outcome, index, out_state, old_conflicts)
+2026-08-16T03:12:17.9200802Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9201536Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 797, in _maybe_raise_for_problems
+2026-08-16T03:12:17.9204652Z     self._maybe_raise_for_conda_build(
+2026-08-16T03:12:17.9205526Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 887, in _maybe_raise_for_conda_build
+2026-08-16T03:12:17.9208642Z     raise exc
+2026-08-16T03:12:17.9210122Z conda_libmamba_solver.conda_build_exceptions.ExplainedDependencyNeedsBuildingError: Unsatisfiable dependencies for platform win-64: {MatchSpec("python-osc[version='>=1.8.3']")}
+2026-08-16T03:12:17.9210868Z Encountered problems while solving:
+2026-08-16T03:12:17.9211502Z   - unsupported request
+2026-08-16T03:12:17.9211896Z 
+2026-08-16T03:12:17.9212404Z Could not solve for environment specs
+2026-08-16T03:12:17.9212955Z The following package could not be installed
+2026-08-16T03:12:17.9213592Z \u2514\u2500 python-osc >=1.8.3 * does not exist (perhaps a typo or a missing channel).
+2026-08-16T03:12:17.9214037Z 
+2026-08-16T03:12:17.9214735Z During handling of the above exception, another exception occurred:
+2026-08-16T03:12:17.9215162Z 
+2026-08-16T03:12:17.9215713Z Traceback (most recent call last):
+2026-08-16T03:12:17.9216328Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 896, in get_install_actions
+2026-08-16T03:12:17.9217207Z     _actions = _install_actions(prefix, index, specs, subdir=subdir)
+2026-08-16T03:12:17.9217906Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9218489Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 1421, in install_actions
+2026-08-16T03:12:17.9221721Z     txn = solver.solve_for_transaction(prune=False, ignore_pinned=False)
+2026-08-16T03:12:17.9226711Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9227378Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 164, in solve_for_transaction
+2026-08-16T03:12:17.9229002Z     unlink_precs, link_precs = self.solve_for_diff(
+2026-08-16T03:12:17.9231740Z                                ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9232443Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 233, in solve_for_diff
+2026-08-16T03:12:17.9234230Z     final_precs = self.solve_final_state(
+2026-08-16T03:12:17.9236549Z                   ^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9237188Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 184, in solve_final_state
+2026-08-16T03:12:17.9239002Z     out_state = self._solving_loop(in_state, out_state, index)
+2026-08-16T03:12:17.9243308Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9243901Z   File "D:\Miniforge\Lib\site-packages\conda\common\io.py", line 110, in decorated
+2026-08-16T03:12:17.9245494Z     return f(*args, **kwds)
+2026-08-16T03:12:17.9247817Z            ^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9248474Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 312, in _solving_loop
+2026-08-16T03:12:17.9250551Z     solved, outcome = self._solve_attempt(in_state, out_state, index, attempt=attempt)
+2026-08-16T03:12:17.9256359Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9257104Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 369, in _solve_attempt
+2026-08-16T03:12:17.9259259Z     new_conflicts = self._maybe_raise_for_problems(outcome, index, out_state, old_conflicts)
+2026-08-16T03:12:17.9264024Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9264720Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 797, in _maybe_raise_for_problems
+2026-08-16T03:12:17.9267821Z     self._maybe_raise_for_conda_build(
+2026-08-16T03:12:17.9268542Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 887, in _maybe_raise_for_conda_build
+2026-08-16T03:12:17.9271790Z     raise exc
+2026-08-16T03:12:17.9273171Z conda_libmamba_solver.conda_build_exceptions.ExplainedDependencyNeedsBuildingError: Unsatisfiable dependencies for platform win-64: {MatchSpec("python-osc[version='>=1.8.3']")}
+2026-08-16T03:12:17.9273909Z Encountered problems while solving:
+2026-08-16T03:12:17.9274615Z   - unsupported request
+2026-08-16T03:12:17.9275106Z 
+2026-08-16T03:12:17.9275664Z Could not solve for environment specs
+2026-08-16T03:12:17.9276239Z The following package could not be installed
+2026-08-16T03:12:17.9276956Z \u2514\u2500 python-osc >=1.8.3 * does not exist (perhaps a typo or a missing channel).
+2026-08-16T03:12:17.9277462Z 
+2026-08-16T03:12:17.9278131Z During handling of the above exception, another exception occurred:
+2026-08-16T03:12:17.9278532Z 
+2026-08-16T03:12:17.9279092Z Traceback (most recent call last):
+2026-08-16T03:12:17.9279746Z   File "D:\a\1\s\.ci_support\build_all.py", line 409, in <module>
+2026-08-16T03:12:17.9280421Z     build_all(os.path.join(root_dir, "recipes"), args.arch)
+2026-08-16T03:12:17.9281049Z   File "D:\a\1\s\.ci_support\build_all.py", line 199, in build_all
+2026-08-16T03:12:17.9281708Z     build_folders(recipes_dir, folders, arch, channel_urls)
+2026-08-16T03:12:17.9282360Z   File "D:\a\1\s\.ci_support\build_all.py", line 277, in build_folders
+2026-08-16T03:12:17.9283089Z     conda_build.api.build([recipe], config=get_config(arch, channel_urls))
+2026-08-16T03:12:17.9283814Z   File "D:\Miniforge\Lib\site-packages\conda_build\api.py", line 242, in build
+2026-08-16T03:12:17.9285579Z     return build_tree(
+2026-08-16T03:12:17.9286367Z            ^^^^^^^^^^^
+2026-08-16T03:12:17.9287048Z   File "D:\Miniforge\Lib\site-packages\conda_build\build.py", line 3682, in build_tree
+2026-08-16T03:12:17.9294761Z     packages_from_this = build(
+2026-08-16T03:12:17.9296002Z                          ^^^^^^
+2026-08-16T03:12:17.9296641Z   File "D:\Miniforge\Lib\site-packages\conda_build\build.py", line 2464, in build
+2026-08-16T03:12:17.9302212Z     create_build_envs(top_level_pkg, notest)
+2026-08-16T03:12:17.9302920Z   File "D:\Miniforge\Lib\site-packages\conda_build\build.py", line 2300, in create_build_envs
+2026-08-16T03:12:17.9308496Z     raise e
+2026-08-16T03:12:17.9309204Z   File "D:\Miniforge\Lib\site-packages\conda_build\build.py", line 2273, in create_build_envs
+2026-08-16T03:12:17.9314432Z     environ.get_package_records(
+2026-08-16T03:12:17.9315133Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 945, in get_install_actions
+2026-08-16T03:12:17.9319721Z     precs = get_package_records(
+2026-08-16T03:12:17.9322115Z             ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9322986Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 945, in get_install_actions
+2026-08-16T03:12:17.9325313Z     precs = get_package_records(
+2026-08-16T03:12:17.9329455Z             ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9330170Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 945, in get_install_actions
+2026-08-16T03:12:17.9330935Z     precs = get_package_records(
+2026-08-16T03:12:17.9331553Z             ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9332161Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 896, in get_install_actions
+2026-08-16T03:12:17.9334687Z     _actions = _install_actions(prefix, index, specs, subdir=subdir)
+2026-08-16T03:12:17.9338463Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9339111Z   File "D:\Miniforge\Lib\site-packages\conda_build\environ.py", line 1421, in install_actions
+2026-08-16T03:12:17.9342959Z     txn = solver.solve_for_transaction(prune=False, ignore_pinned=False)
+2026-08-16T03:12:17.9347258Z           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9347929Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 164, in solve_for_transaction
+2026-08-16T03:12:17.9349689Z     unlink_precs, link_precs = self.solve_for_diff(
+2026-08-16T03:12:17.9352569Z                                ^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9353201Z   File "D:\Miniforge\Lib\site-packages\conda\core\solve.py", line 233, in solve_for_diff
+2026-08-16T03:12:17.9355032Z     final_precs = self.solve_final_state(
+2026-08-16T03:12:17.9357412Z                   ^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9358077Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 184, in solve_final_state
+2026-08-16T03:12:17.9359975Z     out_state = self._solving_loop(in_state, out_state, index)
+2026-08-16T03:12:17.9364042Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9364701Z   File "D:\Miniforge\Lib\site-packages\conda\common\io.py", line 110, in decorated
+2026-08-16T03:12:17.9366225Z     return f(*args, **kwds)
+2026-08-16T03:12:17.9368533Z            ^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9369239Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 312, in _solving_loop
+2026-08-16T03:12:17.9371406Z     solved, outcome = self._solve_attempt(in_state, out_state, index, attempt=attempt)
+2026-08-16T03:12:17.9377304Z                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9377917Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 369, in _solve_attempt
+2026-08-16T03:12:17.9380135Z     new_conflicts = self._maybe_raise_for_problems(outcome, index, out_state, old_conflicts)
+2026-08-16T03:12:17.9385987Z                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-08-16T03:12:17.9386743Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 797, in _maybe_raise_for_problems
+2026-08-16T03:12:17.9389874Z     self._maybe_raise_for_conda_build(
+2026-08-16T03:12:17.9390643Z   File "D:\Miniforge\Lib\site-packages\conda_libmamba_solver\solver.py", line 887, in _maybe_raise_for_conda_build
+2026-08-16T03:12:17.9393783Z     raise exc
+2026-08-16T03:12:17.9395058Z conda_libmamba_solver.conda_build_exceptions.ExplainedDependencyNeedsBuildingError: Unsatisfiable dependencies for platform win-64: {MatchSpec("python-osc[version='>=1.8.3']")}
+2026-08-16T03:12:17.9395847Z Encountered problems while solving:
+2026-08-16T03:12:17.9396450Z   - unsupported request
+2026-08-16T03:12:17.9396816Z 
+2026-08-16T03:12:17.9397431Z Could not solve for environment specs
+2026-08-16T03:12:17.9397997Z The following package could not be installed
+2026-08-16T03:12:17.9398563Z \u2514\u2500 python-osc >=1.8.3 * does not exist (perhaps a typo or a missing channel).
+2026-08-16T03:12:26.2551564Z ##[error]Cmd.exe exited with code '1'.
+2026-08-16T03:12:26.2894079Z ##[section]Finishing: Build recipes
+2026-08-16T03:12:26.2924364Z Skipping step due to condition evaluation.
+Evaluating: SucceededNode()
+Result: False
+
+2026-08-16T03:12:26.2951183Z ##[section]Starting: Checkout conda-forge/staged-recipes@refs/pull/34544/merge to s
+2026-08-16T03:12:26.2957670Z ==============================================================================
+2026-08-16T03:12:26.2958076Z Task         : Get sources
+2026-08-16T03:12:26.2958230Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2026-08-16T03:12:26.2958614Z Version      : 1.0.0
+2026-08-16T03:12:26.2958871Z Author       : Microsoft
+2026-08-16T03:12:26.2959193Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2026-08-16T03:12:26.2959512Z ==============================================================================
+2026-08-16T03:12:26.6862600Z Cleaning any cached credential from repository: conda-forge/staged-recipes (GitHub)
+2026-08-16T03:12:26.6986493Z ##[section]Finishing: Checkout conda-forge/staged-recipes@refs/pull/34544/merge to s
+2026-08-16T03:12:26.7022673Z ##[section]Starting: Finalize Job
+2026-08-16T03:12:26.7042055Z TestResultLogParser: JasmineTestResultParser : Starting jasmine test result parser.
+2026-08-16T03:12:26.7042251Z TestResultLogParser: JestTestResultParser : Starting jest test result parser.
+2026-08-16T03:12:26.7042461Z TestResultLogParser: MochaTestResultParser : Starting mocha test result parser.
+2026-08-16T03:12:26.7042666Z TestResultLogParser: PythonTestResultParser : Starting python test result parser.
+2026-08-16T03:12:26.7042878Z TestResultLogParser: PythonTestResultParser : ExpectingTestResults: transitioned to state ExpectingFailedResults at line 1371
+2026-08-16T03:12:26.9641578Z TestResultLogParser: Waiting for log plugin to finish, pending process 2 log lines.
+2026-08-16T03:12:26.9715469Z Cleaning up task key
+2026-08-16T03:12:26.9716937Z Start cleaning up orphan processes.
+2026-08-16T03:12:26.9805948Z ##[section]Finishing: Finalize Job
+2026-08-16T03:12:26.9833583Z ##[section]Finishing: win_64 win

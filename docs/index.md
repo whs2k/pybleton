@@ -17,12 +17,12 @@
   <!-- Stats Counter Bar -->
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; padding: 1.5rem; background: rgba(15,23,42,0.6); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
     <div>
-      <div style="font-size: 1.8rem; font-weight: 800; color: #38bdf8;">12,450+</div>
+      <div id="downloads-val" style="font-size: 1.8rem; font-weight: 800; color: #38bdf8;">--</div>
       <div style="font-size: 0.85rem; color: #64748b; font-weight: 500;">PyPI Downloads</div>
     </div>
     <div>
-      <div style="font-size: 1.8rem; font-weight: 800; color: #c084fc;">850+</div>
-      <div style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Active MCP Sessions</div>
+      <div id="stars-val" style="font-size: 1.8rem; font-weight: 800; color: #c084fc;">--</div>
+      <div style="font-size: 0.85rem; color: #64748b; font-weight: 500;">GitHub Stars</div>
     </div>
     <div>
       <div style="font-size: 1.8rem; font-weight: 800; color: #4ade80;">100%</div>
@@ -33,6 +33,22 @@
       <div style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Ableton Remote Installer</div>
     </div>
   </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('stats.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('downloads-val').textContent = data.downloads.toLocaleString();
+        document.getElementById('stars-val').textContent = data.stars.toLocaleString();
+      })
+      .catch(err => {
+        console.error('Error loading stats:', err);
+        document.getElementById('downloads-val').textContent = '0';
+        document.getElementById('stars-val').textContent = '0';
+      });
+  });
+  </script>
 </div>
 
 ## 🎬 Live MCP Interactive Simulation
